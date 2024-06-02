@@ -1,0 +1,528 @@
+
+<!--   <div>-->
+<!--       <img id="myImg" src="../letters/chudo.jpg" style="width:100%;max-width:150px">-->
+
+<!--       &lt;!&ndash; The Modal &ndash;&gt;-->
+<!--       <div id="myModal" class="modal">-->
+<!--           <span class="close">&times;</span>-->
+<!--           <img class="modal-content" id="img01" alt=" ">-->
+<!--           <div id="caption"></div>-->
+<!--       </div>-->
+<!--   </div>-->
+
+<!--    <div class="col-md-8 footer-w3layouts">-->
+<!--        <div class="footer-top-agile">-->
+<!--            <div class="nav-footer-w3l">-->
+<!--                <a href="../compani/about.html" class="scroll">Главная</a>-->
+<!--                <a href="../compani/services.html" class="scroll">Услуги</a>-->
+<!--                <a href="../compani/price.html" class="scroll">Прайс</a>-->
+<!--                <a href="../compani/vacan.html" class="scroll">Вакансии</a>-->
+<!--                <a href="../compani/contacts.html" class="scroll">Контакты</a>-->
+<!--            </div>-->
+<!--            <div class="footer-contact-w3ls">-->
+<!--                <p class="num-w3ls">+7(4012)92-66-93</p>-->
+<!--                <p class="num-w3ls">+7 963-350-66-93</p>-->
+<!--&lt;!&ndash;                <p class="email-w3l">Email: <a href="mailto:covaj83820@5ubo.com">covaj83820@5ubo.com</a></p>&ndash;&gt;-->
+<!--            </div>-->
+<!--            <div class="clearfix"></div>-->
+<!--        </div>-->
+<!--        <div class="footer-bottom-wthree">-->
+<!--            <div class="nav-footer-w3l">-->
+<!--                <ul class="social_links">-->
+<!--                    <li><a href="https://vk.com/idbayard39"><span class="social-icon social-vk"><i class="fa fa-vk"></i><img src="../image/preview3.png" alt="#" class="social-img"></span></a></li>-->
+<!--                    <li><a href="https://vk.com/idbayard39"><span class="social-icon social-instagram"><i class="fa fa-instagram"></i><img src="../image/preview2.png" alt="#" class="social-img"></span></a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="clearfix"></div>-->
+
+
+<!--    <div class="col-md-8 footer-w3layouts">-->
+<!--        <div class="footer-top-agile">-->
+<!--            <div class="nav-footer-w3l">-->
+<!--                <a href="../compani/about.html" class="scroll">Главная</a>-->
+<!--                <a href="../compani/services.html" class="scroll">Услуги</a>-->
+<!--                <a href="../compani/price.html" class="scroll">Прайс</a>-->
+<!--                <a href="../compani/vacan.html" class="scroll">Вакансии</a>-->
+<!--                <a href="../compani/contacts.html" class="scroll">Контакты</a>-->
+<!--            </div>-->
+<!--            <div class="footer-contact-w3ls">-->
+<!--                <p class="num-w3ls">+7(4012)92-66-93</p>-->
+<!--                <p class="num-w3ls">+7 963-350-66-93</p>-->
+<!--                <p class="email-w3l">Email: <a href="mailto:covaj83820@5ubo.com">covaj83820@5ubo.com</a></p>-->
+<!--            </div>-->
+<!--            <div class="clearfix"></div>-->
+<!--        </div>-->
+<!--        <div class="footer-bottom-wthree">-->
+<!--            <div class="nav-footer-w3l">-->
+<!--                <ul class="social_links">-->
+<!--                    <li><a href="https://vk.com/idbayard39"><span class="social-icon social-vk"><i class="fa fa-vk"></i><img src="../image/preview3.png" alt="#" class="social-img"></span></a></li>-->
+<!--                    <li><a href="https://vk.com/idbayard39"><span class="social-icon social-instagram"><i class="fa fa-instagram"></i><img src="../image/preview2.png" alt="#" class="social-img"></span></a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="clearfix"></div>-->
+
+
+<!--    <div class="copy-w3right">-->
+<!--        <div class="container">-->
+<!--            <div class="bottom-w3lnav">-->
+<!--                <ul>-->
+<!--                    <li><a href="../index.html">Главная</a></li>-->
+<!--                    <li><a href="../compani/about.html">О нас</a></li>-->
+<!--                    <li><a href="../compani/services.html">Услуги</a></li>-->
+<!--                    <li><a href="../compani/price.html" >Прайс</a></li>-->
+<!--                    <li><a href="../compani/vacan.html">Вакансии</a></li>-->
+<!--                    <li><a href="../compani/contacts.html">Контакты</a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--            <p>+7(4012)92-66-93</p>-->
+<!--            <p>+7 963-350-66-93</p>-->
+<!--            <p>Email: <a href="mailto:covaj83820@5ubo.com">covaj83820@5ubo.com</a></p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+<!--    <div class="footer-inlin">-->
+<!--            <a href="../compani/about.html" class="scroll21">Главная</a>-->
+<!--            <a href="../compani/services.html" class="scroll21">Услуги</a>-->
+<!--            <a href="../compani/price.html" class="scroll21">Прайс</a>-->
+<!--            <a href="../compani/vacan.html" class="scroll21">Вакансии</a>-->
+<!--            <a href="../compani/contacts.html" class="scroll21">Контакты</a>-->
+<!--            <p class="scroll21">+7(4012)92-66-93</p>-->
+<!--            <p class="scroll21">+7 963-350-66-93</p>-->
+<!--            <p class="scroll21 emailp">Email: <a href="mailto:covaj83820@5ubo.com">covaj83820@5ubo.com</a></p>-->
+<!--    </div>-->
+<!--    <div class="col-md-8 footer-w3layouts">-->
+<!--        <div class="footer-top-agile">-->
+<!--            <div class="nav-footer-w3l .footer-inlin ">-->
+<!--                <a href="../compani/about.html" class="scroll">Главная</a>-->
+<!--                <a href="../compani/services.html" class="scroll">Услуги</a>-->
+<!--                <a href="../compani/price.html" class="scroll">Прайс</a>-->
+<!--                <a href="../compani/vacan.html" class="scroll">Вакансии</a>-->
+<!--                <a href="../compani/contacts.html" class="scroll">Контакты</a>-->
+<!--                <p class="scroll">+7(4012)92-66-93</p>-->
+<!--                <p class="scroll">+7 963-350-66-93</p>-->
+<!--                <p class="scroll">Email: <a href="mailto:covaj83820@5ubo.com">covaj83820@5ubo.com</a></p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <div class="footer-bottom-wthree">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="nav-footer-w3l">&ndash;&gt;-->
+<!--&lt;!&ndash;                <ul class="social_links">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li><a href="https://vk.com/idbayard39"><span class="social-icon social-vk"><i class="fa fa-vk"></i><img src="../image/preview3.png" alt="#" class="social-img"></span></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <li><a href="https://vk.com/idbayard39"><span class="social-icon social-instagram"><i class="fa fa-instagram"></i><img src="../image/preview2.png" alt="#" class="social-img"></span></a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                </ul>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    </div>-->
+
+
+
+
+<div >
+        <div class="container footercont">
+            <div class="row">
+                <div class="col-xs-6 col-md-3 mar">
+                    <h3 class="footh6">
+                        Навигация:
+                    </h3>
+                    <ul class="footerli">
+                        <li><a href="../compani/about.html" class="scroll">Главная</a></li>
+                        <li><a href="../compani/services.html" class="scroll">Услуги</a></li>
+                        <li><a href="../compani/price.html" class="scroll">Прайс</a></li>
+                        <li><a href="../compani/vacan.html" class="scroll">Вакансии</a></li>
+                        <li><a href="../compani/contacts.html" class="scroll">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-3 mar">
+                    <h3 class="footh6">
+                        Связь с нами:
+                    </h3>
+                    <ul class="footerli">
+                        <li> <p class="num">+7(4012)92-66-93</p></li>
+                        <li><p class="num">+7 963-350-66-93</p></li>
+                        <li><p class="email-w3l">Email: <a href="mailto:covaj83820@5ubo.com">covaj83820@5ubo.com</a></p></li>
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-md-3 mar">
+                    <h3 class="footh6">
+                        Соц. сети:
+                    </h3>
+                    <div class="footer-bottom-wthree">
+                        <div class="nav-footer-w3l">
+                            <ul class="social_links">
+                                <li><a href="https://vk.com/idbayard39"><span class="social-icon social-vk"><i class="fa fa-vk"></i><img src="../image/preview3.png" alt="#" class="social-img2"></span></a></li>
+                                <li><a href="https://vk.com/idbayard39"><span class="social-icon social-instagram"><i class="fa fa-instagram"></i><img src="../image/preview2.png" alt="#" class="social-img2"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--            <div class="col-md-4 col-sm-6 col-xs-12">-->
+<!--                <ul class="social-icons">-->
+<!--                    <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>-->
+<!--                    <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>-->
+<!--                    <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>-->
+<!--                    <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--    <div class="col-md-8 footer-w3layouts">-->
+<!--        <div class="footer-top-agile">-->
+<!--            <div class="nav-footer-w3l">-->
+<!--                <a href="../compani/about.html" class="scroll">Главная</a>-->
+<!--                <a href="../compani/services.html" class="scroll">Услуги</a>-->
+<!--                <a href="../compani/price.html" class="scroll">Прайс</a>-->
+<!--                <a href="../compani/vacan.html" class="scroll">Вакансии</a>-->
+<!--                <a href="../compani/contacts.html" class="scroll">Контакты</a>-->
+<!--            </div>-->
+<!--            <div class="footer-contact-w3ls">-->
+<!--                <p class="num-w3ls">+7(4012)92-66-93</p>-->
+<!--                <p class="num-w3ls">+7 963-350-66-93</p>-->
+<!--                <p class="email-w3l">Email: <a href="mailto:covaj83820@5ubo.com">covaj83820@5ubo.com</a></p>-->
+<!--            </div>-->
+<!--            <div class="clearfix"></div>-->
+<!--        </div>-->
+<!--        <div class="footer-bottom-wthree">-->
+<!--            <div class="nav-footer-w3l">-->
+<!--                <ul class="social_links">-->
+<!--                    <li><a href="https://vk.com/idbayard39"><span class="social-icon social-vk"><i class="fa fa-vk"></i><img src="../image/preview3.png" alt="#" class="social-img"></span></a></li>-->
+<!--                    <li><a href="https://vk.com/idbayard39"><span class="social-icon social-instagram"><i class="fa fa-instagram"></i><img src="../image/preview2.png" alt="#" class="social-img"></span></a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="clearfix"></div>-->
+
+
+<!--<div class="vacancontainer">-->
+<!--    <main>-->
+<!--        <article class="panel-group bs-accordion" id="accordion" role="tablist" aria-multiselectable="true">-->
+<!--            <section class="panel panel-default">-->
+<!--                <div class="panel-heading" role="tab" id="headingOne">-->
+<!--                    <h4 class="panel-title mainacc">-->
+<!--                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">-->
+<!--                            Вооруженая охрана-->
+<!--                            <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>-->
+<!--                        </a>-->
+<!--                    </h4>-->
+<!--                </div>-->
+<!--                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">-->
+<!--                    <div class="panel-body mainacc">-->
+<!--                        <p >-->
+<!--                            ООО ЧОО Баярд предоставляет услуги вооруженной охраны.-->
+<!--                            Наши сотрудники имеют профессиональные навыки обращения с оружием и хорошую физическую подготовку.-->
+<!--                            Наличие удостоверения 6 разряда и разрешения на ношение оружия.-->
+<!--                            В составе ООО ЧОО Баярд бывшие сотрудники силовых структур имеющие большой опыт в организации безопасности и действий в случае нештатных ситуаций.-->
+<!--                            На вооружении состоит служебное оружие с нарезным стволом ИЖ-71 калибр 9х17 мм.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--            <section class="panel panel-default">-->
+<!--                <div class="panel-heading" role="tab" id="headingTwo">-->
+<!--                    <h4 class="panel-title mainacc">-->
+<!--                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                            Консультирование по вопросам безопасности-->
+<!--                            <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>-->
+<!--                        </a>-->
+<!--                    </h4>-->
+<!--                </div>-->
+<!--                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">-->
+<!--                    <div class="panel-body mainacc">-->
+<!--                        <p>-->
+<!--                            Каждый объект нуждается в оценке безопасности, что включает в себя наличие возможных рисков и необходимый комплекс мер для их исключения.-->
+<!--                            Мы проведем обследование объекта на наличие возможных угроз, дадим рекомендации по технической укрепленности объекта и подготовим комплекс мер для предупреждения и предотвращения противоправных действий.-->
+<!--                            По необходимости, будем консультировать Вас по всем вопросам безопасности, на всем этапе нашего сотрудничества.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--            <section class="panel panel-default">-->
+<!--                <div class="panel-heading" role="tab" id="headingThree">-->
+<!--                    <h4 class="panel-title mainacc">-->
+<!--                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                            Охрана объектов-->
+<!--                            <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>-->
+<!--                        </a>-->
+<!--                    </h4>-->
+<!--                </div>-->
+<!--                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">-->
+<!--                    <div class="panel-body mainacc">-->
+<!--                        <p >-->
+<!--                            ООО ЧОО «Баярд» осуществляет охрану различных объектов, любой сложности.-->
+<!--                            Мы обеспечим сохранность Вашего имущества в дневное, ночное время или круглосуточно, при необходимости организуем внутриобъектовый, пропускной режимы.-->
+<!--                            Обеспечение безопасности объектов является основным направлением деятельности нашей организации, наши сотрудники строго следуют должностным инструкциям и имеют большой опыт в данной области.-->
+<!--                            На начальном этапе мы узнаем техническое задание и пожелания клиента, далее даем рекомендации и подготавливаем комплекс мер, необходимых для получения нужного результата.-->
+<!--                            После согласования всех основных аспектов, начинаем наше сотрудничество.-->
+<!--                            Обеспечиваем контроль работы дежурной смены, оперативно реагируем на все ситуации возникающие на объекте охраны.-->
+<!--                            Руководство ООО ЧОО Баярд, всегда находится на связи.-->
+<!--                            Индивидуальный подход к каждому клиенту и решению поставленной задачи-->
+<!--                            <br>-->
+<!--                            Физическая охрана Объекта будет осуществляться только сотрудниками частной охранной организации «Баярд», являющимися гражданами Российской Федерации,-->
+<!--                            пригодные к выполнению обязанностей  по состоянию здоровья, прошедшие профессиональную подготовку для работы в качестве частного охранника, сдавшие квалификационный экзамен и получившие в установленном порядке удостоверение частного охранника и личную карточку,-->
+<!--                            имеющими аналогичный опыт работы, не привлекавшийся к административной и уголовной ответственности. Требования клиента по уровню квалификации персонала будут удовлетворены в полном объеме.-->
+<!--                            Согласно требований Трудового Кодекса РФ по охране труда руководство ООО «ЧОО «Баярд» прошло  обучение по программе для руководителей и специалистов в полном объеме со сдачей зачётов.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--            <section class="panel panel-default">-->
+<!--                <div class="panel-heading" role="tab" id="headingFour">-->
+<!--                    <h4 class="panel-title mainacc">-->
+<!--                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">-->
+<!--                            Охрана массовых мероприятий-->
+<!--                            <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>-->
+<!--                        </a>-->
+<!--                    </h4>-->
+<!--                </div>-->
+<!--                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">-->
+<!--                    <div class="panel-body mainacc">-->
+<!--                        <p >-->
+<!--                            Любое массовое мероприятие нуждается в организации охраны, для защиты гостей и участников мероприятия от противоправных действий и в сохранении действующего порядка и режима.-->
+<!--                            В зависимости от масштаба и характера мероприятия, определяется количество сотрудников охраны и комплекс мер необходимых для обеспечения безопасности.-->
+<!--                            <br>-->
+<!--                            Все задействованные сотрудники ООО ЧОО Баярд, имеют опыт работы в команде и решения конфликтных ситуаций.-->
+<!--                            Перед началом работы все сотрудники проходят обязательный инструктаж и проверку на физическое и психологическое состояние.-->
+<!--                            Слаженная работа дежурной смены и оперативное реагирование в случае нештатной ситуации, залог надежной охраны.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--        </article>-->
+<!--    </main>-->
+<!--</div>-->
+<!--<footer class="footer">-->
+<!--    <div class="footer-inlin">-->
+<!--        <div class="bottom-w3lnav">-->
+<!--            <ul>-->
+<!--                <li><a href="../index.html">Главная</a></li>-->
+<!--                <li><a href="../compani/about.html">О нас</a></li>-->
+<!--                <li><a href="../compani/services.html">Услуги</a></li>-->
+<!--                <li><a href="../compani/price.html" >Прайс</a></li>-->
+<!--                <li><a href="../compani/vacan.html">Вакансии</a></li>-->
+<!--                <li><a href="../compani/contacts.html">Контакты</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="bottom-w3lnav3">-->
+<!--            <ul>-->
+<!--                <li>+7(4012)92-66-93</li>-->
+<!--                <li>+7 963-350-66-93 </li>-->
+<!--                <li> <p>Email: <a href="mailto:covaj83820@5ubo.com">covaj83820@5ubo.com</a></p> </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</footer>-->
+
+
+
+
+<!--<div class="wrapper">-->
+<!--    &lt;!&ndash; Sidebar Holder &ndash;&gt;-->
+<!--    <nav id="sidebar">-->
+<!--        <div id="dismiss">-->
+<!--            <i class="glyphicon glyphicon-arrow-left"></i>-->
+<!--        </div>-->
+
+<!--        <div class="sidebar-header">-->
+<!--            <h3>-->
+<!--                <a href="../index.html" >Меню</a>-->
+<!--            </h3>-->
+<!--        </div>-->
+
+<!--        <ul class="list-unstyled components">-->
+<!--            <li class="active">-->
+<!--                <a href="about.html" data-toggle="collapse" aria-expanded="false">Главная</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="services.html">Услуги</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="price.html">Прайс</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="vacan.html">Вакансии</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="contacts.html">Контакты</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
+
+<!--    &lt;!&ndash; Page Content Holder &ndash;&gt;-->
+<!--    <div id="content">-->
+<!--        <nav class="navbar navbar-default">-->
+<!--            <div class="container-fluid">-->
+
+<!--                <div class="navbar-header">-->
+<!--                    <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">-->
+<!--                        <i class="glyphicon glyphicon-align-left"></i>-->
+<!--                        <span>Меню</span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+<!--    </div>-->
+<!--</div>-->
+<!--    <div class="overlay"></div>-->
+
+
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+
+
+<!--        <section class="pictures">-->
+<!--            <a href="#../letters/chudo.jpg">-->
+<!--                <img src="../letters/chudo.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/chudo.jpg" href="#" class="full" style="background-image:url(../letters/chudo.jpg)"></a>-->
+
+<!--            <a href="#../letters/capt.jpg">-->
+<!--                <img src="../letters/capt.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/capt.jpg" href="#" class="full" style="background-image:url(../letters/capt.jpg)"></a>-->
+
+<!--            <a href="#../letters/gasprom1.jpg">-->
+<!--                <img src="../letters/gasprom1.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/gasprom1.jpg" href="#" class="full" style="background-image:url(../letters/gasprom1.jpg)"></a>-->
+
+<!--            <a href="#../letters/gasprom2.jpg">-->
+<!--                <img src="../letters/gasprom2.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/gasprom2.jpg" href="#" class="full" style="background-image:url(../letters/gasprom2.jpg)"></a>-->
+
+<!--            <a href="#../letters/gram1.jpg">-->
+<!--                <img src="../letters/gram1.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/gram1.jpg" href="#" class="full" style="background-image:url(../letters/gram1.jpg)"></a>-->
+
+<!--            <a href="#../letters/gram2.jpg">-->
+<!--                <img src="../letters/gram2.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/gram2.jpg" href="#" class="full" style="background-image:url(../letters/gram2.jpg)"></a>-->
+
+<!--            <a href="#../letters/gram3.jpg">-->
+<!--                <img src="../letters/gram3.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/gram3.jpg" href="#" class="full" style="background-image:url(../letters/gram3.jpg)"></a>-->
+
+<!--            <a href="#../letters/gram4.jpg">-->
+<!--                <img src="../letters/gram4.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/gram4.jpg" href="#" class="full" style="background-image:url(../letters/gram4.jpg)"></a>-->
+
+<!--            <a href="#../letters/gram5.jpg">-->
+<!--                <img src="../letters/gram5.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/gram5.jpg" href="#" class="full" style="background-image:url(../letters/gram5.jpg)"></a>-->
+
+<!--            <a href="#../letters/sfet.jpg">-->
+<!--                <img src="../letters/sfet.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/sfet.jpg" href="#" class="full" style="background-image:url(../letters/sfet.jpg)"></a>-->
+
+<!--            <a href="#../letters/spert.jpg">-->
+<!--                <img src="../letters/spert.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/spert.jpg" href="#" class="full" style="background-image:url(../letters/spert.jpg)"></a>-->
+
+<!--            <a href="#../letters/torg.jpg">-->
+<!--                <img src="../letters/torg.jpg">-->
+<!--            </a>-->
+<!--            <a id="../letters/torg.jpg" href="#" class="full" style="background-image:url(../letters/torg.jpg)"></a>-->
+<!--        </section>-->
