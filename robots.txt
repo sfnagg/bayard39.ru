@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /template_part2/
+Disallow: /letters/
+
+Sitemap: https://www.bayard39.ru/sitemap.xml
