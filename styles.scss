@@ -1,8 +1,5 @@
 @charset "UTF-8";
 @import "sass.scss";
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=STIX+Two+Text&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&display=swap');
 
 body {
   background: transparent;
@@ -1525,5 +1522,526 @@ p.email-w3l {
     -ms-transform: translateY(-100vh);
     -o-transform: translateY(-100vh);
     transform: translateY(-100vh);
+  }
+}
+
+/* =====================================================================
+   DESIGN REFRESH — токены, шапка, главная, правки вёрстки
+   Блок добавлен поверх старых правил, старые селекторы не удалялись.
+   Дублируется в styles.scss и styles.css: SCSS компилируется в CSS,
+   поэтому правку нужно держать в обоих файлах.
+   ===================================================================== */
+
+:root {
+  --bg:            #0D1117;
+  --surface:       #161B22;
+  --surface-2:     #1C232C;
+  --border:        #2A323C;
+  --text:          #F8FAFC;
+  --text-muted:    #9AA7B5;
+  --brand:         #F5B301;
+  --brand-hover:   #FFC72C;
+  --on-brand:      #0D1117;
+  --radius:        10px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 72px;
+  --container: 1140px;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, .site-nav a, .btn {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-style: normal;
+  letter-spacing: -0.01em;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* видимый фокус — раньше его не было вообще */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* ---------------------------------------------------
+   ШАПКА
+--------------------------------------------------- */
+.site-header {
+  background: rgba(13, 17, 23, 0.92);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 72px;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+.site-brand img {
+  width: 40px;
+  height: auto;
+}
+
+.site-brand b {
+  color: var(--brand);
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+.site-brand span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: none;
+  margin-left: auto;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: var(--space-1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: var(--radius);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.site-nav a:hover {
+  background: var(--surface-2);
+  color: var(--brand);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--brand);
+  background: var(--surface);
+}
+
+.header-phone {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 16px;
+  min-height: 44px;
+  background: var(--brand);
+  color: var(--on-brand);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  transition: background 0.2s var(--ease);
+}
+
+.header-phone:hover,
+.header-phone:focus {
+  background: var(--brand-hover);
+  color: var(--on-brand);
+}
+
+/* бургер живёт внутри шапки, а не поверх контента */
+.cd-section {
+  top: 14px;
+  right: 12px;
+  z-index: 110;
+}
+
+/* телефон в шапке — начиная с крупных телефонов */
+@media (min-width: 480px) {
+  .header-phone { display: inline-flex; margin-left: auto; }
+}
+
+/* горизонтальное меню появляется, когда все шесть пунктов реально помещаются;
+   до этого остаётся бургер */
+@media (min-width: 992px) {
+  .site-nav { display: block; }
+  .header-phone { margin-left: var(--space-3); }
+  .cd-section { display: none; }
+}
+
+@media (min-width: 992px) and (max-width: 1100px) {
+  .site-nav a { padding: 10px 9px; font-size: 14px; }
+}
+
+/* ---------------------------------------------------
+   ГЛАВНАЯ: первый экран
+--------------------------------------------------- */
+.hero {
+  padding: var(--space-7) 0 var(--space-6);
+}
+
+.hero-grid {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0 0 var(--space-3);
+  color: var(--text);
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--brand);
+}
+
+.hero-lead {
+  font-size: clamp(16px, 2vw, 19px);
+  color: var(--text-muted);
+  max-width: 56ch;
+  margin: 0 0 var(--space-5);
+}
+
+.hero-art {
+  margin: 0 auto;
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: var(--brand-hover);
+  color: var(--on-brand);
+}
+
+.btn-secondary {
+  border-color: var(--border);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.btn svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+/* ---------------------------------------------------
+   ДОВЕРИЕ / УСЛУГИ / ЦЕНЫ / КОНТАКТЫ
+--------------------------------------------------- */
+.section {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border);
+}
+
+.section h2 {
+  font-size: clamp(22px, 3vw, 30px);
+  margin: 0 0 var(--space-4);
+  font-weight: 700;
+}
+
+.section-lead {
+  color: var(--text-muted);
+  margin: calc(var(--space-4) * -1) 0 var(--space-4);
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.card p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 15px;
+}
+
+.card .icon {
+  color: var(--brand);
+  width: 28px;
+  height: 28px;
+}
+
+.card-link {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  /* 44px — минимальная зона нажатия */
+  display: inline-flex;
+  align-items: flex-end;
+  min-height: 44px;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+  color: var(--brand-hover);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .facts { grid-template-columns: repeat(3, 1fr); }
+}
+
+.fact {
+  border-left: 3px solid var(--brand);
+  padding-left: var(--space-3);
+}
+
+.fact b {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.fact span {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.price-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.price-strip p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.price-strip b {
+  color: var(--brand);
+  font-size: 26px;
+  font-family: "Montserrat", sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.contact-list li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.contact-list svg {
+  width: 22px;
+  height: 22px;
+  color: var(--brand);
+  flex: none;
+  margin-top: 2px;
+}
+
+.contact-list a {
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.contact-list a:hover {
+  color: var(--brand);
+}
+
+.contact-note {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------
+   ПРАВКИ СТАРОЙ ВЁРСТКИ
+--------------------------------------------------- */
+/* флекс без переноса упирался в ~1140px и давал горизонтальный скролл
+   на всём диапазоне 768–1140px */
+.bottom-w3lnav ul,
+.bottom-w3lnav3 ul {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-inlin {
+  display: block;
+  width: 100%;
+}
+
+.footer-inlin a,
+.text-li-phone a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Футер на мобильных: старое правило схлопывало контейнер в width/height: 0,
+   список уезжал флоатом вправо и давал горизонтальный скролл на 375px. */
+.bottom-w3lnav ul,
+.bottom-w3lnav3 ul {
+  padding-left: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .bottom-w3lnav3 {
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .bottom-w3lnav3 ul {
+    float: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bottom-w3lnav ul li a,
+  .bottom-w3lnav3 ul li a {
+    letter-spacing: 1px;
+    padding: 0.5em 0.8em;
   }
 }

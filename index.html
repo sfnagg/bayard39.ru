@@ -41,28 +41,52 @@
     }
     </script>
     <link rel="icon" href="image/bairdimg.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    
 </head>
 <body>
+
+<header class="site-header">
+    <div class="container">
+        <a class="site-brand" href="index.html">
+            <img src="image/logo-sm.webp" width="96" height="99" alt="">
+            <span class="site-brand-text">
+                <b>ЧОО «Баярд»</b>
+                <span>Калининград · с 2005 года</span>
+            </span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul>
+                <li><a href="index.html" aria-current="page">Главная</a></li>
+                <li><a href="compani/about.html">О нас</a></li>
+                <li><a href="compani/services.html">Услуги</a></li>
+                <li><a href="compani/price.html">Прайс</a></li>
+                <li><a href="compani/vacan.html">Вакансии</a></li>
+                <li><a href="compani/contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <a class="header-phone" href="tel:+74012926693">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +7 (4012) 92-66-93
+        </a>
+    </div>
+</header>
+
+<!-- бургер: только на мобильных, .cd-section скрыт от 768px -->
 <section class="cd-section">
-    <button class="cd-bouncy-nav-trigger" href="#">
-        <span class="sr-only"> Навигация </span>
+    <button class="cd-bouncy-nav-trigger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span class="visually-hidden">Навигация</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
 </section>
 <div class="cd-bouncy-nav-modal">
-    <nav>
+    <nav aria-label="Мобильная навигация">
         <ul class="cd-bouncy-nav">
             <li><a href="index.html">Главная</a></li>
             <li><a href="compani/about.html">О нас</a></li>
@@ -74,23 +98,144 @@
     </nav>
     <a href="#" class="cd-close"> Закрыть </a>
 </div>
-<div class="mains">
-<!--    <h1 class="text1" title="Охранная организачия, Частная охранная организация, Надежность, Доверенность, Камеры, устройства слежение, защита">Баярд</h1>-->
-    <h1 class="text2">
-        Частная Охранная Организация
-    </h1>
-    <img class="pic" src="image/bayard394.png" alt="Логотип ЧОО «Баярд» — частная охранная организация в Калининграде"/>
-    <p class="slogon">
-        "Ваша безопасность - Наша работа"
-    </p>
-</div>
-<!-- jQuery CDN -->
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<!-- Bootstrap Js CDN -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- jQuery Custom Scroller CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1>Частная охранная организация <em>в Калининграде</em></h1>
+                <p class="hero-lead">
+                    Охрана объектов и имущества, вооружённая охрана, охрана массовых мероприятий.
+                    Работаем с 2005 года по лицензии Росгвардии.
+                </p>
+                <div class="btn-row">
+                    <a class="btn btn-primary" href="tel:+74012926693">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        +7 (4012) 92-66-93
+                    </a>
+                    <a class="btn btn-secondary" href="compani/price.html">Услуги и цены</a>
+                </div>
+            </div>
+            <img class="hero-art" src="image/logo.webp" width="560" height="575"
+                 alt="Логотип ЧОО «Баярд»" fetchpriority="high">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="visually-hidden">Почему нам доверяют</h2>
+            <div class="facts">
+                <div class="fact">
+                    <b>с 2005</b>
+                    <span>года работаем в Калининграде</span>
+                </div>
+                <div class="fact">
+                    <b>39ЧО2021000573</b>
+                    <span>лицензия Росгвардии от 11 июня 2021 года</span>
+                </div>
+                <div class="fact">
+                    <b>24/7</b>
+                    <span>дневная, ночная и круглосуточная охрана</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Услуги</h2>
+            <p class="section-lead">Работаем с объектами любой сложности — от офиса до строительной площадки.</p>
+            <div class="grid-3">
+                <article class="card">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <h3>Охрана объектов и имущества</h3>
+                    <p>Дневная, ночная и круглосуточная охрана. Внутриобъектовый и пропускной режим, сохранность имущества.</p>
+                    <a class="card-link" href="compani/services.html">Подробнее →</a>
+                </article>
+                <article class="card">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                    <h3>Вооружённая охрана</h3>
+                    <p>Сотрудники с удостоверением 6 разряда и разрешением на ношение оружия. На вооружении ИЖ-71 калибра 9×17 мм.</p>
+                    <a class="card-link" href="compani/services.html">Подробнее →</a>
+                </article>
+                <article class="card">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                    <h3>Консультирование по безопасности</h3>
+                    <p>Обследуем объект, оценим риски, дадим рекомендации по технической укреплённости и комплексу мер защиты.</p>
+                    <a class="card-link" href="compani/services.html">Подробнее →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Стоимость</h2>
+            <div class="price-strip">
+                <p>Круглосуточный пост — от <b>130 ₽/час</b></p>
+                <p>Дневной и ночной пост — от <b>170 ₽/час</b></p>
+                <p>Охрана мероприятий — от <b>200 ₽/час</b></p>
+                <a class="btn btn-secondary" href="compani/price.html">Полный прайс</a>
+            </div>
+            <p class="contact-note" style="margin-top: 16px;">
+                Стоимость примерная: окончательный расчёт зависит от технического задания и особенностей объекта.
+                Информация не является публичной офертой.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <ul class="contact-list">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>г. Калининград, ул. Мусоргского, д. 21, помещение 5 <span class="contact-note">(вход со двора)</span></span>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>
+                        <a href="tel:+74012926693">+7 (4012) 92-66-93</a> ·
+                        <a href="tel:+79633506693">+7 963 350-66-93</a>
+                        <span class="contact-note">— рабочий телефон</span>
+                    </span>
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+                    <span><a href="mailto:info@bayard39.ru">info@bayard39.ru</a></span>
+                </li>
+            </ul>
+            <div class="btn-row" style="margin-top: 24px;">
+                <a class="btn btn-primary" href="tel:+74012926693">Позвонить</a>
+                <a class="btn btn-secondary" href="compani/contacts.html">Все контакты</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-inlin">
+        <div class="bottom-w3lnav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="compani/about.html">О нас</a></li>
+                <li><a href="compani/services.html">Услуги</a></li>
+                <li><a href="compani/price.html">Прайс</a></li>
+                <li><a href="compani/vacan.html">Вакансии</a></li>
+                <li><a href="compani/contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="bottom-w3lnav3">
+            <ul>
+                <li class="text-li-phone"><a href="tel:+74012926693">+7 (4012) 92-66-93</a></li>
+                <li class="text-li-phone"><a href="tel:+79633506693">+7 963 350-66-93</a></li>
+                <li> <p>Email: <a href="mailto:info@bayard39.ru">info@bayard39.ru</a></p> </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function($){
         var is_bouncy_nav_animating = false;
@@ -107,11 +252,16 @@
                 triggerBouncyNav(false);
             }
         });
+        //закрытие по Esc — раньше модалку нельзя было закрыть с клавиатуры
+        $(document).on('keyup', function(event){
+            if(event.key === 'Escape') triggerBouncyNav(false);
+        });
 
         function triggerBouncyNav($bool) {
             //check if no nav animation is ongoing
             if( !is_bouncy_nav_animating) {
                 is_bouncy_nav_animating = true;
+                $('.cd-bouncy-nav-trigger').attr('aria-expanded', $bool);
 
                 //toggle list items animation
                 $('.cd-bouncy-nav-modal').toggleClass('fade-in', $bool).toggleClass('fade-out', !$bool).find('li:last-child').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
