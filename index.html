@@ -44,8 +44,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -99,7 +97,7 @@
     <a href="#" class="cd-close"> Закрыть </a>
 </div>
 
-<main>
+<main id="top">
     <section class="hero">
         <div class="container hero-grid">
             <div>
@@ -213,6 +211,10 @@
     </section>
 </main>
 
+<a class="to-top" href="#top" aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg>
+</a>
+
 <footer class="footer">
     <div class="footer-inlin">
         <div class="bottom-w3lnav">
@@ -235,49 +237,6 @@
     </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function($){
-        var is_bouncy_nav_animating = false;
-        //open bouncy navigation
-        $('.cd-bouncy-nav-trigger').on('click', function(){
-            triggerBouncyNav(true);
-        });
-        //close bouncy navigation
-        $('.cd-bouncy-nav-modal .cd-close').on('click', function(){
-            triggerBouncyNav(false);
-        });
-        $('.cd-bouncy-nav-modal').on('click', function(event){
-            if($(event.target).is('.cd-bouncy-nav-modal')) {
-                triggerBouncyNav(false);
-            }
-        });
-        //закрытие по Esc — раньше модалку нельзя было закрыть с клавиатуры
-        $(document).on('keyup', function(event){
-            if(event.key === 'Escape') triggerBouncyNav(false);
-        });
-
-        function triggerBouncyNav($bool) {
-            //check if no nav animation is ongoing
-            if( !is_bouncy_nav_animating) {
-                is_bouncy_nav_animating = true;
-                $('.cd-bouncy-nav-trigger').attr('aria-expanded', $bool);
-
-                //toggle list items animation
-                $('.cd-bouncy-nav-modal').toggleClass('fade-in', $bool).toggleClass('fade-out', !$bool).find('li:last-child').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-                    $('.cd-bouncy-nav-modal').toggleClass('is-visible', $bool);
-                    if(!$bool) $('.cd-bouncy-nav-modal').removeClass('fade-out');
-                    is_bouncy_nav_animating = false;
-                });
-
-                //check if CSS animations are supported...
-                if($('.cd-bouncy-nav-trigger').parents('.no-csstransitions').length > 0 ) {
-                    $('.cd-bouncy-nav-modal').toggleClass('is-visible', $bool);
-                    is_bouncy_nav_animating = false;
-                }
-            }
-        }
-    });
-</script>
+<script src="js/site.js" defer></script>
 </body>
 </html>
