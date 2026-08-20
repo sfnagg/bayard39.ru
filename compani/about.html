@@ -13,6 +13,9 @@
     <meta property="og:url" content="https://www.bayard39.ru/compani/about.html">
     <meta property="og:image" content="https://www.bayard39.ru/image/bayard394.png">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap">
     <link rel="icon" href="image/bairdimg.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,9 +28,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<header class="site-header">
+    <div class="container">
+        <a class="site-brand" href="../index.html">
+            <img src="../image/logo-sm.webp" width="96" height="99" alt="">
+            <span class="site-brand-text">
+                <b>ЧОО «Баярд»</b>
+                <span>Калининград · с 2005 года</span>
+            </span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="about.html" aria-current="page">О нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="price.html">Прайс</a></li>
+                <li><a href="vacan.html">Вакансии</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <a class="header-phone" href="tel:+74012926693">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +7 (4012) 92-66-93
+        </a>
+    </div>
+</header>
+
 <section class="cd-section">
-    <button class="cd-bouncy-nav-trigger" href="#">
-        <span class="sr-only"> Навигация </span>
+    <button class="cd-bouncy-nav-trigger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span class="visually-hidden">Навигация</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -294,8 +323,8 @@
         </div>
         <div class="bottom-w3lnav3">
             <ul>
-                <li class="text-li-phone">+7(4012)92-66-93</li>
-                <li class="text-li-phone">+7 963-350-66-93 </li>
+                <li class="text-li-phone"><a href="tel:+74012926693">+7 (4012) 92-66-93</a></li>
+                <li class="text-li-phone"><a href="tel:+79633506693">+7 963 350-66-93</a></li>
                 <li> <p>Email: <a href="mailto:info@bayard39.ru">info@bayard39.ru</a></p> </li>
             </ul>
         </div>
@@ -367,18 +396,22 @@
         var img = document.getElementById("myImg");
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
+        // #myImg на этой странице нет — без проверки скрипт падал
+        // и весь код ниже не выполнялся
+        if (img && modal) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
+            // When the user clicks on <span> (x), close the modal
+            if (span) span.onclick = function() {
+                modal.style.display = "none";
+            }
         }
 
     </script>
