@@ -75,15 +75,21 @@
             method: 'POST',
             body: new URLSearchParams(new FormData(form))
           }).then(function (r) {
-            return r.json().then(function (data) {
-              if (!r.ok) throw new Error(data && data.error);
+            return r.json().catch(function () {
+              return null;
+            }).then(function (data) {
+              if (!r.ok || !data || data.ok !== true) {
+                var error = new Error(data && data.error || '');
+                error.isUserMessage = Boolean(data && data.error);
+                throw error;
+              }
               form.innerHTML = '<p class="lead-done">Заявка принята. ' +
                 'Перезвоним в рабочее время.</p>';
             });
           }).catch(function (err) {
             button.disabled = false;
             msg.className = 'lead-msg is-error';
-            msg.textContent = (err && err.message) ||
+            msg.textContent = err && err.isUserMessage ? err.message :
               'Не отправилось. Позвоните: +7 (4012) 92-66-93';
           });
         });
