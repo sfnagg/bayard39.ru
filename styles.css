@@ -2307,3 +2307,118 @@ button:focus-visible {
 .to-top:hover { border-color: var(--brand); }
 
 .to-top svg { width: 20px; height: 20px; }
+
+/* ---------------------------------------------------
+   ФОРМЫ ЗАЯВОК
+--------------------------------------------------- */
+.lead-form {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 640px;
+}
+
+.lead-form label {
+  display: grid;
+  gap: var(--space-1);
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font: 400 16px/1.4 "Open Sans", system-ui, sans-serif;
+  transition: border-color 0.2s var(--ease);
+}
+
+/* 16px и не меньше: с более мелкого шрифта Safari на iPhone
+   зумит страницу при фокусе, и вёрстка уезжает */
+.lead-form textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  outline: 3px solid var(--brand);
+  outline-offset: 1px;
+  border-color: var(--brand);
+}
+
+/* :user-invalid, а не :invalid — подсветка появляется, когда человек ушёл
+   с поля, а не пока он ещё печатает первую букву. Где не поддерживается,
+   просто нет подсветки: нативная проверка при отправке работает всё равно */
+.lead-form input:user-invalid,
+.lead-form textarea:user-invalid {
+  border-color: #E5484D;
+}
+
+.lead-row {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.lead-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.lead-consent input {
+  width: 20px;
+  min-height: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex: none;
+  accent-color: var(--brand);
+}
+
+.lead-consent a { color: var(--brand); }
+
+.lead-opt { color: var(--text-muted); font-weight: 400; }
+
+.lead-form button { width: 100%; }
+
+.lead-msg:empty { display: none; }
+
+.lead-msg {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.lead-msg.is-error { color: #FF6369; }
+
+.lead-done {
+  margin: 0;
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--brand);
+  border-radius: var(--radius);
+  font-size: 18px;
+}
+
+/* Ловушка для ботов: человек поля не видит и не сфокусируется на нём.
+   display:none часть ботов пропускает, поэтому убираем за экран */
+.lead-trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  .lead-row { grid-template-columns: 1fr 1fr; }
+  .lead-form button { width: auto; justify-self: start; }
+}
