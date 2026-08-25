@@ -201,53 +201,6 @@
         </div>
     </section>
 
-    <section class="section" id="zayavka">
-        <div class="container">
-            <h2>Оставить заявку</h2>
-            <p class="section-lead">Перезвоним в рабочее время, обсудим объект и посчитаем стоимость.</p>
-            <form class="lead-form" data-zayavka method="post"
-                  action="https://admin.bayard39.ru/api/zayavka">
-                <input type="hidden" name="kind" value="client">
-                <p class="lead-trap" aria-hidden="true">
-                    <label>Это поле заполнять не нужно
-                        <input type="text" name="site" tabindex="-1" autocomplete="off">
-                    </label>
-                </p>
-                <div class="lead-row">
-                    <label>Как к вам обращаться
-                        <input type="text" name="name" required minlength="2" maxlength="80"
-                               autocomplete="name" placeholder="Иван Петрович">
-                    </label>
-                    <label>Телефон
-                        <input type="tel" name="phone" required inputmode="tel" maxlength="32"
-                               autocomplete="tel" placeholder="+7 900 000-00-00">
-                    </label>
-                </div>
-                <label>Что нужно охранять
-                    <select name="topic">
-                        <option>Объект или помещение</option>
-                        <option>Мероприятие</option>
-                        <option>Другое</option>
-                    </select>
-                </label>
-                <label>Комментарий <span class="lead-opt">— необязательно</span>
-                    <textarea name="comment" rows="3" maxlength="1000"
-                              placeholder="Адрес, режим охраны, с какого числа"></textarea>
-                </label>
-                <label class="lead-consent">
-                    <input type="checkbox" name="consent" value="1" required>
-                    <span>Согласен на обработку персональных данных и с
-                        <a href="compani/policy.html">политикой обработки</a></span>
-                </label>
-                <button class="btn btn-primary" type="submit">Отправить заявку</button>
-                <p class="lead-msg" role="status" aria-live="polite"></p>
-                <noscript>
-                    <p class="contact-note">Форме нужен включённый JavaScript.
-                       Позвоните: <a href="tel:+74012926693">+7 (4012) 92-66-93</a></p>
-                </noscript>
-            </form>
-        </div>
-    </section>
 
     <section class="section" id="contacts">
         <div class="container">
@@ -292,7 +245,6 @@
                 <li><a href="compani/price.html">Прайс</a></li>
                 <li><a href="compani/vacan.html">Вакансии</a></li>
                 <li><a href="compani/contacts.html">Контакты</a></li>
-                <li><a href="compani/policy.html">Политика обработки персональных данных</a></li>
             </ul>
         </div>
         <div class="bottom-w3lnav3">

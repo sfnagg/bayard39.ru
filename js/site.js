@@ -53,48 +53,6 @@
       });
     }
 
-    /* Заявки. Один обработчик на обе формы — клиента и соискателя:
-       различаются они только скрытым полем kind и парой полей.
-       Тело шлём как URLSearchParams, то есть обычной формой: такой
-       межсайтовый запрос браузер считает «простым» и preflight не делает.
-       ponytail: без JS форма всё равно отправится по action, но покажет
-       голый JSON — заявка при этом не теряется, поэтому и оставили. */
-    Array.prototype.forEach.call(
-      document.querySelectorAll('form[data-zayavka]'),
-      function (form) {
-        var msg = form.querySelector('.lead-msg');
-        var button = form.querySelector('button[type="submit"]');
-
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();          // сюда доходим только после нативной проверки полей
-          button.disabled = true;
-          msg.className = 'lead-msg';
-          msg.textContent = 'Отправляем…';
-
-          fetch(form.action, {
-            method: 'POST',
-            body: new URLSearchParams(new FormData(form))
-          }).then(function (r) {
-            return r.json().catch(function () {
-              return null;
-            }).then(function (data) {
-              if (!r.ok || !data || data.ok !== true) {
-                var error = new Error(data && data.error || '');
-                error.isUserMessage = Boolean(data && data.error);
-                throw error;
-              }
-              form.innerHTML = '<p class="lead-done">Заявка принята. ' +
-                'Перезвоним в рабочее время.</p>';
-            });
-          }).catch(function (err) {
-            button.disabled = false;
-            msg.className = 'lead-msg is-error';
-            msg.textContent = err && err.isUserMessage ? err.message :
-              'Не отправилось. Позвоните: +7 (4012) 92-66-93';
-          });
-        });
-      }
-    );
 
     var top = document.querySelector('.to-top');
     if (top) {
