@@ -1804,6 +1804,13 @@ button:focus-visible {
   font-variant-numeric: tabular-nums;
 }
 
+/* текстовые ссылки внутри контентных блоков */
+.fact a,
+.card p a,
+.panel-body a {
+  color: var(--brand);
+}
+
 .fact span {
   color: var(--text-muted);
   font-size: 14px;
