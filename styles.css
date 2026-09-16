@@ -83,7 +83,7 @@ ul.cd-bouncy-nav {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: url("image/close.png") no-repeat center center;
+  background: url("image/close.webp") no-repeat center center;
   -webkit-transform: scale(0) translateZ(0);
   -moz-transform: scale(0) translateZ(0);
   -ms-transform: scale(0) translateZ(0);
@@ -1267,7 +1267,7 @@ p.email-w3l {
   width: 80px;
   border-radius: 50%;
   background-color: #CCB76C;
-  background-image: url("image/menu3.png");
+  background-image: url("image/menu3.webp");
   background-repeat: no-repeat;
   background-position: 0 0; }
 

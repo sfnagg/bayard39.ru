@@ -1,0 +1,19 @@
+# Настройки сборки GitHub Pages.
+#
+# docs/ — внутренние заметки по SEO и история позиций. Держим их в репозитории,
+# но на bayard39.ru не публикуем: раньше docs/seo.md отдавался по адресу
+# https://www.bayard39.ru/docs/seo.md с кодом 200, и robots.txt закрывал его
+# только от индексации, а не от чтения.
+#
+# Ключ exclude ЗАМЕНЯЕТ список Jekyll по умолчанию, поэтому его значения
+# перечислены здесь целиком.
+exclude:
+  - docs
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

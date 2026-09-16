@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /docs/
 
 Sitemap: https://www.bayard39.ru/sitemap.xml
