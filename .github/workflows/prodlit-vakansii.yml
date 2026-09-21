@@ -1,0 +1,22 @@
+# Вакансии выпадают из поиска Google примерно через месяц после публикации, если
+# не сказать, до какого числа они актуальны. Раз в неделю двигаем срок вперёд.
+name: Продлить вакансии
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"       # понедельник, 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  prodlit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - run: python .github/prodlit-vakansii.py
+      - name: Закоммитить, если срок сдвинулся
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git diff --quiet || git commit -am "Продлён срок вакансий" && git push
