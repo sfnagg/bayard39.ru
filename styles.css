@@ -2378,6 +2378,35 @@ button:focus-visible {
 
 .wa-btn svg { width: 24px; height: 24px; }
 
+/* Telegram — тот же номер, вторым этажом над WhatsApp. */
+.tg-btn {
+  position: fixed;
+  right: var(--space-3);
+  bottom: calc(var(--space-3) + 112px);
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2aabee;
+  border: 1px solid #1d8cc4;
+  border-radius: var(--radius);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  z-index: 90;
+}
+
+.tg-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(42, 171, 238, 0.35); }
+
+.tg-btn svg { width: 22px; height: 22px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-btn { transition: none; }
+  .tg-btn:hover { transform: none; }
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   .wa-btn { transition: none; }
   .wa-btn:hover { transform: none; }
