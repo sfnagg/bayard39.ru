@@ -2254,6 +2254,36 @@ button:focus-visible {
   background: var(--brand);
 }
 
+/* Условия на странице вакансий: маркер тот же, что в карточках вакансий —
+   список читается как продолжение, а не как чужой блок. */
+.usloviya {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  max-width: 72ch;
+}
+
+.usloviya li {
+  position: relative;
+  padding-left: var(--space-4);
+  margin: 0 0 var(--space-2);
+  color: var(--text-muted);
+}
+
+.usloviya li strong { color: var(--text); }
+
+.usloviya li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+
 /* ---------------------------------------------------
    ПРАЙС
 --------------------------------------------------- */
@@ -2460,3 +2490,66 @@ button:focus-visible {
 .to-top:hover { border-color: var(--brand); }
 
 .to-top svg { width: 20px; height: 20px; }
+
+/* ---------------------------------------------------
+   КНОПКА WHATSAPP
+   Стоит над кнопкой «наверх» и видна всегда, а не по скроллу:
+   это канал связи, а не навигация. Зелёный — родной цвет
+   мессенджера: по нему кнопку узнают, не читая подпись.
+--------------------------------------------------- */
+.wa-btn {
+  position: fixed;
+  right: var(--space-3);
+  bottom: calc(var(--space-3) + 56px);
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  border: 1px solid #1da851;
+  border-radius: var(--radius);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  z-index: 90;
+}
+
+.wa-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35); }
+
+.wa-btn svg { width: 24px; height: 24px; }
+
+/* Telegram — тот же номер, вторым этажом над WhatsApp. */
+.tg-btn {
+  position: fixed;
+  right: var(--space-3);
+  bottom: calc(var(--space-3) + 112px);
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2aabee;
+  border: 1px solid #1d8cc4;
+  border-radius: var(--radius);
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  z-index: 90;
+}
+
+.tg-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(42, 171, 238, 0.35); }
+
+.tg-btn svg { width: 22px; height: 22px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tg-btn { transition: none; }
+  .tg-btn:hover { transform: none; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-btn { transition: none; }
+  .wa-btn:hover { transform: none; }
+}
+
