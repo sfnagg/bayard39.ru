@@ -5,10 +5,13 @@
 # https://www.bayard39.ru/docs/seo.md с кодом 200, и robots.txt закрывал его
 # только от индексации, а не от чтения.
 #
+# tools/ — служебные скрипты, по той же причине: посетителю сайта они ни к чему.
+#
 # Ключ exclude ЗАМЕНЯЕТ список Jekyll по умолчанию, поэтому его значения
 # перечислены здесь целиком.
 exclude:
   - docs
+  - tools
   - package-lock.json
   - Gemfile
   - Gemfile.lock
