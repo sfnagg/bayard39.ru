@@ -56,5 +56,15 @@ python tools/pereobhod.py https://www.bayard39.ru/   # любые адреса
 действует полгода, ключ сервисного аккаунта Google — бессрочно. Сервисный аккаунт
 добавлен в Search Console **владельцем**; «Полный доступ» не подходит, API отвечает 403.
 
+### Спрос и позиции
+
+```bash
+python tools/spros.py                     # Wordstat и место в выдаче по Калининграду
+python tools/spros.py "охрана склада"     # свои запросы
+```
+
+Ключ Yandex Cloud Search API — `~/.secrets/yandex-search.env`. Разбор результатов —
+в [docs/seo.md](docs/seo.md), «Спрос и выдача по Калининграду».
+
 Сводка Вебмастера отстаёт от выборки на несколько дней — смотреть `in-search/samples`,
 а не цифры в сводке. Google догоняет медленнее Яндекса.
