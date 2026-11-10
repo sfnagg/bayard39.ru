@@ -279,53 +279,90 @@
 
 
 /* ---------------------------------------------------
+   КАРТОЧКИ ФАКТОВ О КОМПАНИИ (О НАС)
+--------------------------------------------------- */
+.fact-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px;
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.fact-card:hover {
+  border-color: rgba(245, 179, 1, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(245, 179, 1, 0.06);
+}
+
+.fact-card-metric {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--brand);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 12px;
+  display: inline-block;
+  text-shadow: 0 0 16px rgba(245, 179, 1, 0.25);
+}
+
+.fact-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px 0;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.fact-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---------------------------------------------------
    ПРАЙС
 --------------------------------------------------- */
 .price-table-wrap {
   overflow-x: auto;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 179, 1, 0.05);
+  margin-bottom: var(--space-5);
 }
 
 .price-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 420px;
-}
-
-.price-table caption {
-  caption-side: top;
-  text-align: left;
-  padding: var(--space-3) var(--space-4);
-  font-family: "Montserrat", system-ui, sans-serif;
-  font-weight: 600;
-  color: var(--brand);
-  border-bottom: 1px solid var(--border);
+  min-width: 460px;
 }
 
 .price-table th,
 .price-table td {
-  padding: 14px var(--space-4);
+  padding: 16px 22px;
   text-align: left;
-  border-bottom: 1px solid var(--border);
-}
-
-.price-table tbody tr:last-child th,
-.price-table tbody tr:last-child td {
-  border-bottom: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .price-table thead th {
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  font-family: "Montserrat", system-ui, sans-serif;
 }
 
 .price-table tbody th {
-  font-weight: 400;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--text);
 }
 
@@ -333,12 +370,68 @@
   text-align: right;
   white-space: nowrap;
   color: var(--brand);
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Montserrat", system-ui, sans-serif;
 }
 
 .price-table tbody tr:hover {
-  background: var(--surface-2);
+  background: rgba(245, 179, 1, 0.04);
+}
+
+.price-breakdown-card {
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: var(--space-5);
+}
+
+.price-breakdown-card h2 {
+  margin: 0 0 12px 0;
+}
+
+.price-factors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px 20px;
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.price-factors-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.factor-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 8px rgba(245, 179, 1, 0.6);
+  flex-shrink: 0;
+}
+
+.price-disclaimer {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 16px 0 0 0;
+  line-height: 1.5;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+}
+
+.faq-section {
+  margin-bottom: var(--space-5);
+}
+
+.faq-section h2 {
+  margin-bottom: var(--space-4);
 }
 
 /* ---------------------------------------------------

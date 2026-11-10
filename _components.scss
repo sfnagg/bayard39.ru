@@ -439,28 +439,130 @@
 }
 
 /* ---------------------------------------------------
-   ПРАВКИ СТАРОЙ ВЁРСТКИ
+   ФУТЕР (ТАКТИЧЕСКИЙ СТИЛЬ)
 --------------------------------------------------- */
-/* флекс без переноса упирался в ~1140px и давал горизонтальный скролл
-   на всём диапазоне 768–1140px */
-.bottom-w3lnav ul,
-.bottom-w3lnav3 ul {
-  flex-wrap: wrap;
-  justify-content: center;
+footer.footer {
+  background: #0A0D12;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 36px 0 28px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+footer.footer::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
 }
 
 .footer-inlin {
-  display: block;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  text-align: center;
   width: 100%;
 }
 
-.footer-inlin a,
-.text-li-phone a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
+.bottom-w3lnav {
+  width: 100%;
 }
 
+.bottom-w3lnav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-w3lnav a {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: normal !important;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.bottom-w3lnav a:hover {
+  color: var(--brand);
+  background: rgba(245, 179, 1, 0.08);
+}
+
+.bottom-w3lnav3 {
+  width: 100%;
+  max-width: 800px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+}
+
+.bottom-w3lnav3 ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-w3lnav3 a,
+.text-li-phone a {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: normal !important;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s var(--ease);
+}
+
+.bottom-w3lnav3 a:hover,
+.text-li-phone a:hover {
+  color: var(--brand);
+}
+
+.bottom-w3lnav3 p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: normal !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bottom-w3lnav3 p a {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------
+   ПРАВКИ СТАРОЙ ВЁРСТКИ
+--------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
