@@ -1958,12 +1958,44 @@ button:focus-visible {
 .fact b {
   display: block;
   font-family: "Montserrat", sans-serif;
-  font-size: clamp(17px, 1.65vw, 22px);
+  font-size: clamp(16px, 1.65vw, 20px);
   font-weight: 700;
   color: var(--text);
-  font-variant-numeric: tabular-nums;
   margin-bottom: 8px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+}
+
+.fact b a {
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: color 0.2s var(--ease);
+}
+
+.fact b a:hover {
+  color: var(--brand);
+}
+
+.fact b a::after {
+  content: "→";
+  font-size: 18px;
+  color: var(--brand);
+  transition: transform 0.2s var(--ease);
+}
+
+.fact:hover b a::after {
+  transform: translateX(4px);
+}
+
+.fact .fact-code {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #B5C2D0;
+  letter-spacing: 0.01em;
 }
 
 /* текстовые ссылки внутри контентных блоков */
