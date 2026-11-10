@@ -160,49 +160,33 @@
   color: var(--on-brand);
 }
 
-.price-breakdown-card {
-  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+.rates-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(22, 27, 34, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius);
-  padding: 24px 28px;
+  border-left: 3px solid var(--brand);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px;
   margin-bottom: var(--space-5);
 }
 
-.price-breakdown-card h2 {
-  margin: 0 0 12px 0;
-}
-
-.price-factors-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 12px 20px;
-  list-style: none;
-  margin: 20px 0;
-  padding: 0;
-}
-
-.price-factors-list li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--text);
-}
-
-.factor-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--brand);
-  box-shadow: 0 0 8px rgba(245, 179, 1, 0.6);
+.rates-notice-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--brand);
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.price-disclaimer {
+.rates-notice-text p {
   font-size: 13px;
   color: var(--text-muted);
-  margin: 16px 0 0 0;
   line-height: 1.5;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 12px;
+  margin: 0;
+}
+
+.rates-notice-text strong {
+  color: var(--text);
 }
