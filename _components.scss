@@ -1,0 +1,268 @@
+/* ---------------------------------------------------
+   ДОВЕРИЕ / УСЛУГИ / ЦЕНЫ / КОНТАКТЫ
+--------------------------------------------------- */
+.section {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border);
+}
+
+.section h2 {
+  font-size: clamp(22px, 3vw, 30px);
+  margin: 0 0 var(--space-4);
+  font-weight: 700;
+}
+
+.section-lead {
+  color: var(--text-muted);
+  margin: calc(var(--space-4) * -1) 0 var(--space-4);
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.card p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 15px;
+}
+
+.card .icon {
+  color: var(--brand);
+  width: 28px;
+  height: 28px;
+}
+
+.card-link {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  /* 44px — минимальная зона нажатия */
+  display: inline-flex;
+  align-items: flex-end;
+  min-height: 44px;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+  color: var(--brand-hover);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .facts { grid-template-columns: repeat(3, 1fr); }
+}
+
+.fact {
+  position: relative;
+  background: linear-gradient(135deg, rgba(28, 35, 44, 0.7) 0%, rgba(22, 27, 34, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.fact:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245, 179, 1, 0.35);
+  border-left-color: var(--brand-hover);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 24px rgba(245, 179, 1, 0.14);
+}
+
+.fact b {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(17px, 1.65vw, 22px);
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+/* текстовые ссылки внутри контентных блоков */
+.fact a,
+.card p a,
+.panel-body a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 179, 1, 0.4);
+  text-underline-offset: 3px;
+  transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
+}
+
+.fact a:hover,
+.card p a:hover,
+.panel-body a:hover {
+  color: var(--brand-hover);
+  text-decoration-color: var(--brand-hover);
+}
+
+.fact span {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.price-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.price-strip p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.price-strip b {
+  color: var(--brand);
+  font-size: 26px;
+  font-family: "Montserrat", sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.contact-list li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.contact-list svg {
+  width: 22px;
+  height: 22px;
+  color: var(--brand);
+  flex: none;
+  margin-top: 2px;
+}
+
+.contact-list a {
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.contact-list a:hover {
+  color: var(--brand);
+}
+
+.contact-note {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------
+   ПРАВКИ СТАРОЙ ВЁРСТКИ
+--------------------------------------------------- */
+/* флекс без переноса упирался в ~1140px и давал горизонтальный скролл
+   на всём диапазоне 768–1140px */
+.bottom-w3lnav ul,
+.bottom-w3lnav3 ul {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-inlin {
+  display: block;
+  width: 100%;
+}
+
+.footer-inlin a,
+.text-li-phone a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Футер на мобильных: старое правило схлопывало контейнер в width/height: 0,
+   список уезжал флоатом вправо и давал горизонтальный скролл на 375px. */
+.bottom-w3lnav ul,
+.bottom-w3lnav3 ul {
+  padding-left: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .bottom-w3lnav3 {
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .bottom-w3lnav3 ul {
+    float: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bottom-w3lnav ul li a,
+  .bottom-w3lnav3 ul li a {
+    letter-spacing: 1px;
+    padding: 0.5em 0.8em;
+  }
+}
+

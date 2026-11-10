@@ -61,5 +61,39 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     }
+
+    // 3D Tilt эффект герба в hero-секции (кинематографичный ракурс)
+    var heroVisual = document.querySelector('.hero-visual');
+    var artCard = document.querySelector('.hero-art-card');
+    if (heroVisual && artCard && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      var rafId = null;
+      var curX = 0, curY = 0, targetX = 0, targetY = 0;
+
+      var updateTilt = function () {
+        curX += (targetX - curX) * 0.12;
+        curY += (targetY - curY) * 0.12;
+        artCard.style.transform = 'rotateX(' + (-curY * 13).toFixed(2) + 'deg) rotateY(' + (curX * 15).toFixed(2) + 'deg) translateZ(8px)';
+        if (Math.abs(targetX - curX) > 0.001 || Math.abs(targetY - curY) > 0.001) {
+          rafId = requestAnimationFrame(updateTilt);
+        } else {
+          rafId = null;
+        }
+      };
+
+      heroVisual.addEventListener('mousemove', function (e) {
+        var rect = heroVisual.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        targetX = Math.max(-1, Math.min(1, x * 2));
+        targetY = Math.max(-1, Math.min(1, y * 2));
+        if (!rafId) rafId = requestAnimationFrame(updateTilt);
+      });
+
+      heroVisual.addEventListener('mouseleave', function () {
+        targetX = 0;
+        targetY = 0;
+        if (!rafId) rafId = requestAnimationFrame(updateTilt);
+      });
+    }
   });
 })();
