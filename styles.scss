@@ -94,7 +94,9 @@ button:focus-visible {
    ШАПКА
 --------------------------------------------------- */
 .site-header {
-  background: rgba(13, 17, 23, 0.92);
+  background: rgba(13, 17, 23, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
