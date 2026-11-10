@@ -76,6 +76,136 @@
 }
 
 /* ---------------------------------------------------
+   КАРТОЧКА СТАТУСА И ВИДОВ ДЕЯТЕЛЬНОСТИ (О НАС)
+--------------------------------------------------- */
+.legal-card {
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 179, 1, 0.05);
+  margin-bottom: var(--space-4);
+}
+
+.legal-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(245, 179, 1, 0.08);
+  border: 1px solid rgba(245, 179, 1, 0.25);
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.legal-badge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(245, 179, 1, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.legal-badge-icon svg { width: 18px; height: 18px; }
+
+.legal-title {
+  display: block;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.legal-date {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.legal-lead {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 12px 14px;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.activity-item:hover {
+  border-color: rgba(245, 179, 1, 0.3);
+  background: rgba(245, 179, 1, 0.03);
+}
+
+.activity-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(245, 179, 1, 0.15);
+  color: var(--brand);
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.activity-text strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.activity-text span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.about-approach-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(22, 27, 34, 0.8);
+  border-left: 3px solid var(--brand);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.about-approach-banner strong {
+  color: var(--text);
+}
+
+/* ---------------------------------------------------
    АККОРДЕОН НА <details> — без JS и без Bootstrap
 --------------------------------------------------- */
 .accordion {
@@ -711,123 +841,5 @@
   margin: 0;
 }
 
-/* ---------------------------------------------------
-   КНОПКА «НАВЕРХ»
---------------------------------------------------- */
-.to-top {
-  position: fixed;
-  left: var(--space-3);
-  bottom: var(--space-3);
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(22, 27, 34, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  color: var(--brand);
-  text-decoration: none;
-  opacity: 0;
-  visibility: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease), border-color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease);
-  z-index: 90;
-}
 
-.to-top.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.to-top:hover {
-  border-color: var(--brand);
-  background: var(--brand);
-  color: #000;
-  transform: translateY(-2px);
-}
-
-.to-top svg { width: 20px; height: 20px; }
-
-/* ---------------------------------------------------
-   КНОПКИ МЕССЕНДЖЕРОВ (WHATSAPP & TELEGRAM)
---------------------------------------------------- */
-.wa-btn,
-.tg-btn {
-  position: fixed;
-  right: var(--space-3);
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
-  z-index: 90;
-}
-
-.wa-btn {
-  bottom: var(--space-3);
-  background: #25d366;
-  border: 1px solid #1da851;
-}
-
-.wa-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
-}
-
-.wa-btn svg { width: 24px; height: 24px; }
-
-.tg-btn {
-  bottom: calc(var(--space-3) + 54px);
-  background: #2aabee;
-  border: 1px solid #1d8cc4;
-}
-
-.tg-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 22px rgba(42, 171, 238, 0.45);
-}
-
-.tg-btn svg { width: 22px; height: 22px; }
-
-@media (max-width: 600px) {
-  .to-top {
-    left: 12px;
-    bottom: 14px;
-    width: 42px;
-    height: 42px;
-  }
-  .wa-btn {
-    right: 12px;
-    bottom: 14px;
-    width: 44px;
-    height: 44px;
-  }
-  .tg-btn {
-    right: 12px;
-    bottom: 66px;
-    width: 44px;
-    height: 44px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tg-btn,
-  .wa-btn,
-  .to-top {
-    transition: none;
-  }
-  .tg-btn:hover,
-  .wa-btn:hover,
-  .to-top:hover {
-    transform: none;
-  }
-}
 
