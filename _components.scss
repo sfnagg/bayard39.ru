@@ -305,6 +305,140 @@
 }
 
 /* ---------------------------------------------------
+   LIGHTBOX ДЛЯ БЛАГОДАРСТВЕННЫХ ПИСЕМ
+--------------------------------------------------- */
+.letter-lightbox {
+  border: none;
+  background: transparent;
+  padding: 0;
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+  outline: none;
+  overflow: visible;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.letter-lightbox.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.letter-lightbox::backdrop {
+  background: rgba(13, 17, 23, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.2s var(--ease);
+}
+
+.letter-lightbox.is-open::backdrop {
+  opacity: 1;
+}
+
+.letter-lightbox-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #11151B;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(245, 179, 1, 0.15);
+  overflow: hidden;
+  max-height: 90vh;
+}
+
+.letter-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, transform 0.2s, color 0.2s;
+}
+
+.letter-lightbox-close:hover {
+  background: var(--brand);
+  color: #000;
+  border-color: var(--brand);
+  transform: scale(1.1);
+}
+
+.letter-lightbox-img {
+  max-width: 100%;
+  max-height: calc(85vh - 50px);
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.letter-lightbox-caption {
+  margin: 0;
+  padding: 12px 18px;
+  font-size: 14px;
+  color: var(--text);
+  text-align: center;
+  width: 100%;
+  background: rgba(22, 27, 34, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------------------------------------------------
+   SCROLL REVEAL (КИНЕМАТОГРАФИЧНОЕ ПОЯВЛЕНИЕ)
+--------------------------------------------------- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.facts .fact.reveal-on-scroll:nth-child(2),
+.cards .card.reveal-on-scroll:nth-child(2),
+.letters li.reveal-on-scroll:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.facts .fact.reveal-on-scroll:nth-child(3),
+.cards .card.reveal-on-scroll:nth-child(3),
+.letters li.reveal-on-scroll:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.cards .card.reveal-on-scroll:nth-child(4),
+.letters li.reveal-on-scroll:nth-child(4) {
+  transition-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------
    ПРАВКИ СТАРОЙ ВЁРСТКИ
 --------------------------------------------------- */
 /* флекс без переноса упирался в ~1140px и давал горизонтальный скролл
