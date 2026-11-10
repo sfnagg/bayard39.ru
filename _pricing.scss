@@ -1,0 +1,208 @@
+/* =====================================================================
+   ПРАЙС И ТАРИФЫ (PRICE & RATES)
+   ===================================================================== */
+
+/* Сетка тарифов (Rate Cards 3x2) */
+.rates-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .rates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .rates-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.rate-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.rate-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 179, 1, 0.45);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.6), 0 0 24px rgba(245, 179, 1, 0.1);
+}
+
+/* Выделенная карточка (Круглосуточный пост - Хит) */
+.rate-card.featured {
+  border-color: rgba(245, 179, 1, 0.4);
+  background: linear-gradient(180deg, rgba(28, 35, 45, 0.98), rgba(16, 21, 28, 0.95));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 179, 1, 0.08);
+}
+
+.rate-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.rate-card-title {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.rate-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: "Montserrat", system-ui, sans-serif;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+.rate-badge.gold {
+  background: rgba(245, 179, 1, 0.15);
+  color: var(--brand);
+  border-color: rgba(245, 179, 1, 0.4);
+}
+
+.rate-price-block {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.rate-price {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1.1;
+}
+
+.rate-period {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.rate-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+.rate-features {
+  list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rate-features li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.rate-features li::before {
+  content: "✔";
+  color: var(--brand);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.rate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  transition: all 0.2s var(--ease);
+}
+
+.rate-card:hover .rate-btn,
+.rate-card.featured .rate-btn {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--on-brand);
+}
+
+.price-breakdown-card {
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  margin-bottom: var(--space-5);
+}
+
+.price-breakdown-card h2 {
+  margin: 0 0 12px 0;
+}
+
+.price-factors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px 20px;
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.price-factors-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.factor-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 8px rgba(245, 179, 1, 0.6);
+  flex-shrink: 0;
+}
+
+.price-disclaimer {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 16px 0 0 0;
+  line-height: 1.5;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 12px;
+}
