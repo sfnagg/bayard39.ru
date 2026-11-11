@@ -475,6 +475,10 @@ footer.footer::before {
 
 .bottom-w3lnav {
   width: 100%;
+  /* гасит отступы и нижнюю линию из _legacy-base: разделитель один — border-top у .bottom-w3lnav3 */
+  margin: 0;
+  padding: 0;
+  border-bottom: 0;
 }
 
 .bottom-w3lnav ul {
@@ -511,6 +515,7 @@ footer.footer::before {
 .bottom-w3lnav3 {
   width: 100%;
   max-width: 800px;
+  margin: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 20px;
 }
