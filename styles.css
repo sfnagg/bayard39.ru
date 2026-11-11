@@ -1,12 +1,9 @@
-/* @generated compiled from styles.scss */
 @charset "UTF-8";
-@charset "UTF-8";
-@import "sass.scss";
-
+/*! @generated: styles.css собирается из styles.scss через sass, руками не править */
 body {
   background: transparent;
-  background: linear-gradient($black 65%,$black7,$gray3);
-  font-family: 'Exo 2', sans-serif;
+  background: linear-gradient(#000000 65%, #414141, #a1a1a1);
+  font-family: "Exo 2", sans-serif;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -17,45 +14,52 @@ body {
     MENU/МЕНЮ
 ----------------------------------------------------- */
 a.cd-close {
-  color: $eloy3;
+  color: var(--brand);
   text-decoration: none;
 }
+
 ul.cd-bouncy-nav {
-  list-style:none;
+  list-style: none;
 }
+
 /* open button position */
 .cd-section {
-  top:35px;
-  right:35px;
-  position:fixed;
-  z-index:1;
+  top: 35px;
+  right: 35px;
+  position: fixed;
+  z-index: 1;
 }
+
 .cd-bouncy-nav-trigger {
   /* button style */
   width: 70px;
   height: 70px;
   background: rgba(25, 16, 14, 0.16);
-  color: $eloy3;
+  color: var(--brand);
   padding: 1.2em 1em;
   border-radius: 10em;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 10px #171718;
   outline: none;
 }
+
 .icon-bar {
   display: block;
   width: 22px;
   height: 2px;
-  background-color:#fff;
+  background-color: #fff;
   border-radius: 1px;
   margin-left: 9px;
 }
-.icon-bar+.icon-bar {
+
+.icon-bar + .icon-bar {
   margin-top: 10px;
   margin-left: 9px;
 }
+
 .no-touch .cd-bouncy-nav-trigger:hover {
-  background: $eloy3;
+  background: var(--brand);
 }
+
 .cd-bouncy-nav-modal {
   position: fixed;
   z-index: 1;
@@ -70,6 +74,7 @@ ul.cd-bouncy-nav {
   -moz-transition: opacity 0.3s 0.6s, visibility 0s 0.9s;
   transition: opacity 0.3s 0.6s, visibility 0s 0.9s;
 }
+
 .cd-bouncy-nav-modal.fade-in {
   visibility: visible;
   opacity: 1;
@@ -77,10 +82,11 @@ ul.cd-bouncy-nav {
   -moz-transition: opacity 0.1s 0s, visibility 0s 0s;
   transition: opacity 0.1s 0s, visibility 0s 0s;
 }
+
 .cd-bouncy-nav-modal .cd-close {
   display: block;
   position: fixed;
-  top:20px;
+  top: 20px;
   right: 5%;
   width: 44px;
   height: 44px;
@@ -98,6 +104,7 @@ ul.cd-bouncy-nav {
   -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0.3s;
   transition: transform 0.3s 0s, visibility 0s 0.3s;
 }
+
 .cd-bouncy-nav-modal.fade-in .cd-close {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
@@ -112,7 +119,6 @@ ul.cd-bouncy-nav {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-
 #content {
   width: 100%;
   padding: 20px;
@@ -139,73 +145,79 @@ ul.cd-bouncy-nav {
 .pic {
   max-width: 850px;
   min-width: 200px;
-  max-height: 550px ;
+  max-height: 550px;
   min-height: 100px;
   display: block;
   margin: 0 auto;
 }
+
 .text2 {
-  color: $eloy3;
+  color: var(--brand);
   text-align: center;
   font-size: 55px;
 }
-.slogon
-{
-  text-align: center;
-  color: $eloy3;
-  font-size: 40px;
 
+.slogon {
+  text-align: center;
+  color: var(--brand);
+  font-size: 40px;
 }
+
 /* ---------------------------------------------------
     ABOUT/ГЛАВНАЯ
 ----------------------------------------------------- */
 .abouth1 {
-  color: $eloy3;
+  color: var(--brand);
   text-align: center;
   margin-top: 40px;
   font-size: 60px;
 }
-.abouth2{
-  color: $eloy3;
+
+.abouth2 {
+  color: var(--brand);
   text-align: center;
 }
-.abouth3{
-  color: $eloy3;
+
+.abouth3 {
+  color: var(--brand);
   text-align: center;
 }
-.aboutp{
-  color: $gray2;
+
+.aboutp {
+  color: #E2E2E2;
   margin: 20px;
   margin-left: 5em;
   margin-right: 5em;
   text-align: center;
   font-size: 18px;
 }
-.aboutlist{
-  //border: white solid 3px;
-  margin-left:5em;
+
+.aboutlist {
+  margin-left: 5em;
   margin-right: 5em;
   margin-bottom: 30px;
   margin-top: 40px;
 }
-.aboutul{
-   text-align: justify;
-   color: $gray2;
+
+.aboutul {
+  text-align: justify;
+  color: #E2E2E2;
   margin-right: 20px;
   margin-left: 30px;
   font-size: 16px;
-
 }
-.aboutcont{
+
+.aboutcont {
   font-size: 20px;
   justify-content: center;
 }
-.about-card{
+
+.about-card {
   width: 250px;
   height: 110px;
   margin: 20px;
   border-radius: 3px;
-  border: 5px double $orange2;
+  border: 5px double #FBB045;
   background: transparent;
   display: inline-block;
   text-transform: uppercase;
@@ -215,26 +227,28 @@ ul.cd-bouncy-nav {
   align-items: center;
 }
 
-.card-text{
+.card-text {
   text-align: center;
   color: white;
 }
+
 .animate {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
+
 .two {
   -webkit-animation-delay: 1.7s;
   -moz-animation-delay: 1.7s;
   animation-delay: 1.7s;
 }
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -243,17 +257,14 @@ ul.cd-bouncy-nav {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
-
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
-
 
 /*=== FADE IN DOWN ===*/
 @-webkit-keyframes fadeInDown {
@@ -262,7 +273,6 @@ ul.cd-bouncy-nav {
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
-
   to {
     opacity: 1;
     -webkit-transform: none;
@@ -275,36 +285,37 @@ ul.cd-bouncy-nav {
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
-
   to {
     opacity: 1;
     -webkit-transform: none;
     transform: none;
   }
 }
-
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }
 
 .list6b {
-  padding:0;
+  padding: 0;
   list-style: none;
 }
-.list6b li{
-  padding:6px;
+
+.list6b li {
+  padding: 6px;
 }
+
 .list6b li:before {
-  padding-right:10px;
+  padding-right: 10px;
   font-weight: bold;
-  color: $eloy3;
-  content: "\2714";
+  color: var(--brand);
+  content: "✔";
   transition-duration: 0.5s;
 }
+
 .list6b li:hover:before {
-  color: $eloy3;
-  content: "\2714";
+  color: var(--brand);
+  content: "✔";
 }
 
 #button {
@@ -317,42 +328,42 @@ ul.cd-bouncy-nav {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  transition: background-color .3s,
-  opacity .5s, visibility .5s;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
   opacity: 0;
   visibility: hidden;
   z-index: 1000;
 }
+
 #button::after {
-  content: "\02C4";
-  //font-family: FontAwesome;
+  content: "˄";
   font-weight: normal;
   font-style: normal;
   font-size: 2em;
   line-height: 50px;
   color: #fff;
 }
+
 #button:hover {
   cursor: pointer;
   background-color: #333;
 }
+
 #button:active {
   background-color: #555;
 }
+
 #button.show {
   opacity: 1;
   visibility: visible;
 }
-.pictur-row{
+
+.pictur-row {
   justify-content: center;
   margin-top: 4em;
   text-align: center;
-  //float: right;
-  //justify-content: center;
-  //margin-right: 5em;
 }
-.picturbord{
-  //border: 1px solid $gray ;
+
+.picturbord {
   text-align: center;
   width: 150px;
   height: 210px;
@@ -371,9 +382,11 @@ ul.cd-bouncy-nav {
   column-gap: 1em;
   margin-bottom: -1em;
 }
+
 a {
   display: inline-block;
 }
+
 img {
   display: block;
   width: 100%;
@@ -393,219 +406,226 @@ img {
   background-size: contain;
   background-origin: content-box;
 }
-//.full:hover{
-//  z-index: 1;
-//  //width: 1500;
-//  //height: 1900;
-//}
 
 a:focus + .full {
   z-index: 1;
   display: block;
 }
 
-
-
-
-
-
-
 /* ---------------------------------------------------
     PRICE/ЦЕНЫ
 ----------------------------------------------------- */
-.price{
-  color: $eloy3;
+.price {
+  color: var(--brand);
   text-align: center;
   margin-top: 40px;
   font-size: 50px;
 }
-.pricetext{
-  color: $gray2;
+
+.pricetext {
+  color: #E2E2E2;
   margin: 20px;
   margin-left: 10em;
   margin-right: 5em;
   text-align: center;
   font-size: 16px;
 }
-.tab{
+
+.tab {
   color: white;
-  background:transparent;
-  //border-radius: 15px;
+  background: transparent;
 }
-.tdtext
-{
+
+.tdtext {
   color: white;
 }
-.aligth{
- text-align: center;
+
+.aligth {
+  text-align: center;
   color: white;
 }
 
 /* ---------------------------------------------------
    КОНТАКТЫ/CONTACTS
 ----------------------------------------------------- */
-.contac{
-  color: $eloy3;
+.contac {
+  color: var(--brand);
   text-align: center;
   margin-top: 40px;
   font-size: 50px;
 }
-.contactdiv{
+
+.contactdiv {
   background: transparent;
   border: none;
-  //border: 1px solid white;
 }
-.contact-header{
+
+.contact-header {
   background: transparent;
   color: white;
   font-size: 20px;
-  //border-bottom: 1px solid white;
-  //text-align: center;
 }
-.contact-body{
+
+.contact-body {
   color: white;
   font-size: 20px;
 }
-.map-responsive{
-  overflow:hidden;
-  padding-bottom:56.25%;
-  position:relative;
-  height:0;
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
-.map-responsive iframe{
-  left:0;
-  top:0;
-  height:100%;
-  width:100%;
-  position:absolute;
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
-.social-img2{
+
+.social-img2 {
   width: 100px;
   height: 70px;
 }
-.email a{
-color: white;
+
+.email a {
+  color: white;
 }
+
 /* ---------------------------------------------------
     ВАКАНСИИ/VACAN
 ----------------------------------------------------- */
-.vacan{
-  color: $eloy3;
+.vacan {
+  color: var(--brand);
   text-align: center;
   margin-top: 40px;
   font-size: 50px;
 }
-.vacancontainer{
+
+.vacancontainer {
   margin-top: 50px;
   margin-left: 10em;
   margin-right: 10em;
 }
-.mainacc{
+
+.mainacc {
   color: white;
-  background-color: $black5;
-  //background-color: transparent;
-  //background: transparent;
-  //background-image: transparent ;
+  background-color: #111111;
 }
+
 .bs-accordion {
   color: white;
-  .panel-heading {
-    color: white;
-    padding: 0;
-    a {
-      display: block;
-      padding: 10px 15px;
-      &[aria-expanded=true] {
-        color: white;
-        .glyphicon.glyphicon-chevron-right {
-          transform: rotate(90deg);
-          transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-      }
-      .glyphicon.glyphicon-chevron-right {
-        transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1);
-      }
-    }
-  }
 }
+.bs-accordion .panel-heading {
+  color: white;
+  padding: 0;
+}
+.bs-accordion .panel-heading a {
+  display: block;
+  padding: 10px 15px;
+}
+.bs-accordion .panel-heading a[aria-expanded=true] {
+  color: white;
+}
+.bs-accordion .panel-heading a[aria-expanded=true] .glyphicon.glyphicon-chevron-right {
+  transform: rotate(90deg);
+  transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.bs-accordion .panel-heading a .glyphicon.glyphicon-chevron-right {
+  transition: transform 350ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 /* ---------------------------------------------------
     СЕРВИС/SERVICES
 ----------------------------------------------------- */
-.serviscont{
+.serviscont {
   float: right;
-  background: $black5;
+  background: #111111;
 }
-.servic{
-  color: $eloy3;
+
+.servic {
+  color: var(--brand);
   text-align: center;
   margin-top: 40px;
   font-size: 50px;
   margin-bottom: 10px;
 }
-.servich3{
+
+.servich3 {
   text-align: center;
 }
-.servicard{
+
+.servicard {
   margin: 20px;
 }
-.servictext{
-  color: $black;
+
+.servictext {
+  color: #000000;
   text-align: justify;
 }
-.servictext2{
-  color: $black;
+
+.servictext2 {
+  color: #000000;
   text-align: justify;
   padding: 10px;
 }
-#more {display: none;}
 
-#more2 {display: none;}
+#more {
+  display: none;
+}
+
+#more2 {
+  display: none;
+}
 
 /* ---------------------------------------------------
     FOOTER/НИЗ
 ----------------------------------------------------- */
 footer {
   background: transparent;
-  //margin-top: 20px;
   width: 100%;
   height: 100%;
-  //margin-top: 10em;
   text-align: center;
 }
-.footer{
+
+.footer {
   background: transparent;
   margin-top: 10em;
   width: 100%;
   height: 100%;
-  border: 3px solid transparent ;
-  //border-top:black;
+  border: 3px solid transparent;
 }
-.footer-inlin{
-   background: transparent;
-   //margin-right: 15px;
+
+.footer-inlin {
+  background: transparent;
   color: white;
   display: inline-block;
 }
-.scroll{
+
+.scroll {
   background: transparent;
   text-align: center;
   color: white;
   font-size: 17px;
   padding: 10px;
-  //padding-right: 10px;
-  //padding-left: 10px;
 }
+
 p.emailp a {
-  color: $black;
+  color: #000000;
   text-decoration: none;
   padding-left: 10px;
 }
+
 p.emailp a:hover {
   color: #ffa81d;
 }
+
 p.emailp {
   background: transparent;
-  color: $black;
+  color: #000000;
   font-size: 17px;
   letter-spacing: 0.5px;
 }
@@ -613,90 +633,99 @@ p.emailp {
 /* ---------------------------------------------------
     FOOTER/НИЗ
 ----------------------------------------------------- */
-
-.footh{
-  color: $gray;
+.footh {
+  color: #F7F7F7;
   text-align: center;
 }
-.footh6{
-   color: $gray;
-}
- .footerli{
-   color: $gray;
-   padding-left:0;
-   list-style:none
- }
-.footerli li
-{
-  color: $gray;
-  display:block;
-  font-size: 20px;
-}
-.footerli a
-{
-  color:$gray;
-  font-size: 20px;
 
+.footh6 {
+  color: #F7F7F7;
 }
-.footerli a:active,.footerli a:focus,.footerli a:hover
-{
-  color:#FF9800;
-  text-decoration:none;
+
+.footerli {
+  color: #F7F7F7;
+  padding-left: 0;
+  list-style: none;
+}
+
+.footerli li {
+  color: #F7F7F7;
+  display: block;
+  font-size: 20px;
+}
+
+.footerli a {
+  color: #F7F7F7;
+  font-size: 20px;
+}
+
+.footerli a:active, .footerli a:focus, .footerli a:hover {
+  color: #FF9800;
+  text-decoration: none;
 }
 
 /* ---------------------------------------------------
     FOOTER/НИЗ
 ----------------------------------------------------- */
-.footcont{
+.footcont {
   background: transparent;
 }
-.footrow{
+
+.footrow {
   margin-top: 20px;
   background: transparent;
 }
-.footcard{
+
+.footcard {
   background: transparent;
   border: none;
   color: white;
-
 }
+
 .footer-w3layouts {
   background: transparent;
   padding: 7em 3em 0;
 }
+
 .footer-top-agile h2 a {
   text-decoration: none;
   color: #fff;
   float: left;
   font-size: 1.3em;
   letter-spacing: 2px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   display: inline-block;
   text-transform: uppercase;
   /* text-shadow: 2px 2px #10080b; */
 }
+
 .footer-contact-w3ls {
   float: right;
 }
+
 p.num-w3ls {
   color: white;
   font-weight: bold;
   font-size: 30px;
   letter-spacing: 6px;
 }
+
 p.email-w3l a {
   color: white;
   text-decoration: none;
   padding-left: 10px;
 }
+
 p.email-w3l a:hover {
   color: #ffa81d;
 }
+
 p.email-w3l {
   color: white;
   font-size: 17px;
   letter-spacing: 0.5px;
 }
+
 .nav-footer-w3l a {
   color: white;
   font-size: 15px;
@@ -706,70 +735,76 @@ p.email-w3l {
   text-transform: capitalize;
   margin-right: 18px;
 }
+
 .nav-footer-w3l a:hover {
-  color:#ffa81d;
+  color: #ffa81d;
   text-align: center;
 }
+
 .nav-footer-w3l a:nth-child(5) {
-  margin-right: 0!important;
+  margin-right: 0 !important;
   text-align: center;
 }
+
 .nav-footer-w3l {
-  //float: left;
   display: inline-block;
   margin-top: 0.5em;
   text-align: center;
-
 }
+
 .footer-bottom-wthree {
   margin-top: 1em;
   float: left;
 }
-.footer-button{
-  float:right;
+
+.footer-button {
+  float: right;
 }
+
 .footer-button a {
   display: inline-block;
-  color: $black;
+  color: #000000;
   font-size: 30px;
   font-weight: 600;
   text-transform: capitalize;
   padding: 10px 30px;
   background: #ffa81d;
-  border:none;
+  border: none;
   border-top: 2px solid #ffa81d;
   border-bottom: 2px solid #ffa81d;
   text-decoration: none;
-  transition: .5s;
+  transition: 0.5s;
 }
+
 .footer-button a:hover {
   color: #fff;
   background: transparent;
-  border-color:#fff;
-  letter-spacing:5px;
+  border-color: #fff;
+  letter-spacing: 5px;
 }
+
 /*--//Contact --*/
-
-
 /*-- Footer Social Icons --*/
 .bottom-social-w3ls {
   padding: 1em 0;
   background: #424242;
   text-align: center;
 }
-/*-- Footer Social Icons --*/
 
+/*-- Footer Social Icons --*/
 /*--copy-right--*/
 .copy {
   text-align: center;
   background: #202020;
 }
+
 .copy p {
-  color: $black;
+  color: #000000;
   font-size: 14px;
   letter-spacing: 1px;
   padding: 1em;
 }
+
 .copy p a {
   color: #ffa81d;
   text-decoration: none;
@@ -780,19 +815,22 @@ p.email-w3l {
   -o-transition: 0.5s all;
   -ms-transition: 0.5s all;
 }
-.copy p a:hover{
-  color: $black;
+
+.copy p a:hover {
+  color: #000000;
   transition: 0.5s all;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
   -ms-transition: 0.5s all;
 }
+
 .social_links li {
   display: inline-block;
   margin-right: 4px;
   padding: 0;
 }
+
 .contact .social_links li a {
   display: block;
   text-align: center;
@@ -802,24 +840,28 @@ p.email-w3l {
   height: 32px;
   line-height: 32px;
 }
-.social-img{
+
+.social-img {
   width: 130px;
   height: 100px;
 }
+
 .social-instagram {
   background-color: transparent;
 }
+
 .social-icon {
-   height: 70px;
-   width: 70px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   color: #fff;
-   font-size: 27px;
-   margin-right: 11px;
-   cursor: pointer
- }
+  height: 70px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 27px;
+  margin-right: 11px;
+  cursor: pointer;
+}
+
 /* ---------------------------------------------------
     FOOTER/НИЗ
 ----------------------------------------------------- */
@@ -828,17 +870,20 @@ p.email-w3l {
   padding: 1.5em 0;
   text-align: center;
 }
+
 .copy-w3right p {
   color: #fff;
   text-align: center;
   letter-spacing: 2px;
 }
+
 .copy-w3right p a {
   color: #ff5722;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
   transition: 0.5s all;
 }
+
 .copy-w3right p a:hover {
   color: #fff;
 }
@@ -849,440 +894,114 @@ p.email-w3l {
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
+
 .bottom-w3lnav3 {
   background: none;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
+
 .copy-w3right {
   background: transparent;
   padding: 1.5em 0;
   text-align: center;
 }
+
 .copy-w3right p {
   color: #fff;
   text-align: center;
   letter-spacing: 2px;
 }
+
 .copy-w3right p a {
   color: #ff5722;
   -webkit-transition: 0.5s all;
   -moz-transition: 0.5s all;
   transition: 0.5s all;
 }
+
 .copy-w3right p a:hover {
   color: #fff;
 }
-.bottom-w3lnav{
+
+.bottom-w3lnav {
   width: 1140px;
   max-width: 100%;
-  margin:2em auto;
+  margin: 2em auto;
   border-bottom: 1px solid #404040;
   padding-bottom: 2em;
 }
-.bottom-w3lnav3{
-  //width: 1140px;
-  //max-width: 100%;
-  margin:2em auto;
+
+.bottom-w3lnav3 {
+  margin: 2em auto;
   padding-bottom: 2em;
 }
-.bottom-w3lnav3 ul{
+
+.bottom-w3lnav3 ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
 }
-.bottom-w3lnav3 ul li a:hover{
+
+.bottom-w3lnav3 ul li a:hover {
   background: #FF5722;
 }
-.bottom-w3lnav3 ul li a{
+
+.bottom-w3lnav3 ul li a {
   text-decoration: none;
   letter-spacing: 4px;
   font-size: 1.1em;
   color: #fff;
   position: relative;
   font-weight: 400;
-  padding: .5em 1.1em;
+  padding: 0.5em 1.1em;
   display: inline-block;
   border-radius: 2px;
-  transition: .5s;
+  transition: 0.5s;
 }
-.bottom-w3lnav ul{
+
+.bottom-w3lnav ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
 }
-.bottom-w3lnav ul li a:hover{
+
+.bottom-w3lnav ul li a:hover {
   background: #FF5722;
 }
-.bottom-w3lnav ul li a{
+
+.bottom-w3lnav ul li a {
   text-decoration: none;
   letter-spacing: 4px;
   font-size: 1.1em;
   color: #fff;
   position: relative;
   font-weight: 400;
-  padding: .5em 1.1em;
+  padding: 0.5em 1.1em;
   display: inline-block;
   border-radius: 2px;
-  transition: .5s;
+  transition: 0.5s;
 }
-.text-li-phone{
+
+.text-li-phone {
   font-size: 15px;
-  padding-top:10px ;
+  padding-top: 10px;
 }
-.error
-{
+
+.error {
   text-align: center;
   font-size: 100px;
   color: white;
-  border: 2px solid $gray;
+  border: 2px solid #F7F7F7;
   outline: 2px solid white; /* Параметры белой рамки рамки */
   outline-offset: 10px;
 }
-
-//мобильная адаптация
-@media screen and (max-width: 750px) {
-  .cd-section {
-    top:50px;
-    right:5px;
-    position:fixed;
-    z-index:1;
-  }
-
-  .cd-bouncy-nav-trigger {
-    /* button style */
-    width: 50px;
-    height: 50px;
-    background: rgba(25, 16, 14, 0.16);
-    color: $eloy3;
-    padding: 1.2em 1em;
-    border-radius: 10em;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 10px #171718;
-    outline: none;
-  }
-  .icon-bar {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color:#fff;
-    border-radius: 1px;
-    margin-left: 0;
-  }
-  .icon-bar+.icon-bar {
-    margin-top: 5px;
-    margin-left: 0;
-  }
-  .copy-w3right {
-    background: #191919;
-    padding: 1.5em 0;
-    text-align: center;
-  }
-  .copy-w3right p {
-    color: #fff;
-    text-align: center;
-    letter-spacing: 2px;
-  }
-  .copy-w3right p a {
-    color: #ff5722;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    transition: 0.5s all;
-  }
-  .copy-w3right p a:hover {
-    color: #fff;
-  }
-
-  //footer{
-  //  display: none;
-  //}
-  .footer-inlin{
-    width: 0;
-    height: 0;
-    //float: left;
-    display: block;
-    text-align: center;
-    justify-content: center;
-
-  }
-  .bottom-w3lnav {
-    //display: none;
-    font-size: 12px;
-    background: none;
-    margin: 0;
-    justify-content: center;
-    //margin-bottom: 1em;
-    text-align: left;
-    border-bottom: none;
-    width: 0;
-    height: 0;
-
-  }
-  .bottom-w3lnav3 {
-    justify-content: center;
-    background: none;
-    text-align: left;
-    font-size: 15px;
-    width: 0;
-    height: 0;
-  }
-  .copy-w3right {
-    background: transparent;
-    padding: 1.5em 0;
-    text-align: center;
-  }
-  .copy-w3right p {
-    color: #fff;
-    text-align: center;
-    letter-spacing: 2px;
-  }
-  .copy-w3right p a {
-    color: #ff5722;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    transition: 0.5s all;
-  }
-  .copy-w3right p a:hover {
-    color: #fff;
-  }
-  .bottom-w3lnav{
-    margin:1em auto;
-  }
-  .bottom-w3lnav3{
-    justify-content: center;
-    font-size: 12px;
-    background: none;
-    margin-bottom: 1em;
-    text-align: left;
-  }
-  .bottom-w3lnav3 ul{
-    list-style: none;
-    float: left;
-    display: block;
-    justify-content: space-around;
-  }
-  .bottom-w3lnav3 ul li a:hover{
-    background: #FF5722;
-  }
-  .bottom-w3lnav3 ul li a{
-    text-decoration: none;
-    letter-spacing: 4px;
-    font-size: 1.1em;
-    color: #fff;
-    position: relative;
-    font-weight: 400;
-    padding: .5em 1.1em;
-    display: inline-block;
-    border-radius: 2px;
-    transition: .5s;
-  }
-  .bottom-w3lnav ul{
-    float: left;
-    list-style: none;
-    display: block;
-    justify-content: space-around;
-  }
-  .bottom-w3lnav ul li a:hover{
-    background: #FF5722;
-  }
-  .bottom-w3lnav ul li a{
-    text-decoration: none;
-    letter-spacing: 4px;
-    font-size: 1.1em;
-    color: #fff;
-    position: relative;
-    font-weight: 400;
-    padding: .5em 1.1em;
-    display: inline-block;
-    border-radius: 2px;
-    transition: .5s;
-  }
-  .pic {
-    width: 300px;
-    height: 350px;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
-  .text2 {
-    max-font-size: 60px;
-    min-font-size: 40px;
-    font-size: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .slogon
-  {
-    font-size: 25px;
-  }
-  .foot
-  {
-    width: 100%;
-  }
-  .map{
-    width: 350px;
-    height: 200px;
-  }
-  .vacan{
-    text-align: center;
-    margin-top: 2em;
-  }
-  .vacancontainer{
-    margin-top: 20px;
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-  .abouth1, .abouth2{
-    text-align: center;
-    margin-top: 2em;
-    padding: 10px;
-    font-size: 45px;
-  }
-  .abouth3{
-    font-size: 30px;
-    padding: 10px;
-  }
-  .aboutp{
-    color: $gray2;
-    margin: 30px;
-    text-align: justify;
-  }
-  .about-card{
-    font-size: 14px;
-  }
-  .price{
-    text-align: center;
-    margin-top: 2em;
-    //margin-left: 20px;
-  }
-  .pricetext{
-    color: $gray2;
-    margin: 30px;
-    text-align: justify;
-  }
-  .contac{
-    text-align: center;
-    margin-top: 2em;
-  }
-  .servicard{
-    margin:0 auto;
-    margin-bottom: 10px;
-  }
-  .servic{
-    text-align: center;
-    //margin-top: 3em;
-  }
-  .serviscont{
-    margin:0 auto;
-  }
-  .aboutlist{
-    //border: white solid 3px;
-    margin-left:1em;
-    margin-right: 1em;
-    margin-bottom: 30px;
-    margin-top: 40px;
-  }
-  .aboutcont{
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  p.num-w3ls {
-    margin-top: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 6px;
-  }
-  .social-img{
-    width: 90px;
-    height: 60px;
-  }
-  .nav-footer-w3l{
-    text-align: center;
-  }
-  .scroll{
-    font-size: 14px;
-  }
-  .num {
-    font-size: 14px;
-  }
-  .email-w3l a{
-    font-size: 14px;
-  }
-  .pictur-row{
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-  }
-  .footer-inlin{
-    background: transparent;
-    font-size: 14px;
-    padding: 0;
-    margin-right: 0;
-  }
-  .pictur-row{
-    justify-content: center;
-    margin-top: 4em;
-    text-align: center;
-    ////justify-content: center;
-  }
-  .picturbord{
-    text-align: center;
-    //border: 1px solid $gray ;
-    width: 150px;
-    height: 210px;
-    display: inline-block;
-    justify-content: center;
-    padding-bottom: 0;
-    background: transparent;
-  }
-
-  .pictures {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4;
-    -webkit-column-gap: 1em;
-    -moz-column-gap: 1em;
-    column-gap: 1em;
-    margin-bottom: -1em;
-  }
-  a {
-    display: inline-block;
-  }
-  img {
-    display: block;
-    width: 100%;
-    margin-bottom: 1em;
-  }
-
-  .full {
-    width: 40;
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    padding: 8%;
-    background: #CCC center no-repeat;
-    background: rgba(0, 0, 0, 0.5) center no-repeat;
-    background-size: contain;
-    background-origin: content-box;
-  }
-  a:focus + .full {
-    z-index: 1;
-    display: block;
-  }
-}
-
 
 @media only screen and (min-width: 1170px) {
   .cd-bouncy-nav-modal .cd-close {
     top: 100px;
   }
-
 }
-
 .cd-bouncy-nav {
   position: absolute;
   left: 50%;
@@ -1295,6 +1014,7 @@ p.email-w3l {
   width: 90%;
   max-width: 300px;
 }
+
 .cd-bouncy-nav li {
   width: 50%;
   float: left;
@@ -1310,6 +1030,7 @@ p.email-w3l {
   transform: translateY(100vh);
   text-align: center;
 }
+
 .is-visible .cd-bouncy-nav li {
   /* used to assign a tranlsateY value when the animation is over */
   -webkit-transform: translateY(0);
@@ -1318,63 +1039,73 @@ p.email-w3l {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
+
 .fade-in .cd-bouncy-nav li {
   -webkit-animation: cd-move-in 0.4s;
   -moz-animation: cd-move-in 0.4s;
   animation: cd-move-in 0.4s;
 }
+
 .fade-out .cd-bouncy-nav li {
   -webkit-animation: cd-move-out 0.4s;
   -moz-animation: cd-move-out 0.4s;
   animation: cd-move-out 0.4s;
 }
+
 .fade-in .cd-bouncy-nav li, .fade-out .cd-bouncy-nav li {
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+
 .fade-in .cd-bouncy-nav li:nth-of-type(2), .fade-out .cd-bouncy-nav li:nth-of-type(2) {
   -webkit-animation-delay: 0.1s;
   -moz-animation-delay: 0.1s;
   animation-delay: 0.1s;
 }
+
 .fade-in .cd-bouncy-nav li:nth-of-type(3), .fade-out .cd-bouncy-nav li:nth-of-type(3) {
   -webkit-animation-delay: 0.15s;
   -moz-animation-delay: 0.15s;
   animation-delay: 0.15s;
 }
+
 .fade-in .cd-bouncy-nav li:nth-of-type(4), .fade-out .cd-bouncy-nav li:nth-of-type(4) {
   -webkit-animation-delay: 0.25s;
   -moz-animation-delay: 0.25s;
   animation-delay: 0.25s;
 }
+
 .fade-in .cd-bouncy-nav li:nth-of-type(5), .fade-out .cd-bouncy-nav li:nth-of-type(5) {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
   animation-delay: 0.3s;
 }
+
 .fade-in .cd-bouncy-nav li:nth-of-type(6), .fade-out .cd-bouncy-nav li:nth-of-type(6) {
   -webkit-animation-delay: 0.4s;
   -moz-animation-delay: 0.4s;
   animation-delay: 0.4s;
 }
+
 .cd-bouncy-nav a {
   display: inline-block;
   min-width: 80px;
   position: relative;
   padding: 90px 20px 0;
   margin-bottom: 30px;
-  font-family: 'Montserrat', sans-serif;
-  text-transform:uppercase;
-  color: #fff!important;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #fff !important;
+}
 
-}
 .cd-bouncy-nav a:hover {
-  color:$eloy3!important;
+  color: var(--brand) !important;
 }
+
 .cd-bouncy-nav a::before {
   /* icons */
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -1388,29 +1119,36 @@ p.email-w3l {
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  background-color:  #CCB76C;
+  background-color: #CCB76C;
   background-image: url("image/menu3.webp");
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
 .no-touch .cd-bouncy-nav a:hover::before {
-  background-color: $eloy3;
+  background-color: var(--brand);
 }
+
 .cd-bouncy-nav li:nth-of-type(2) a::before {
   background-position: -80px 0;
 }
+
 .cd-bouncy-nav li:nth-of-type(3) a::before {
   background-position: -160px 0;
 }
+
 .cd-bouncy-nav li:nth-of-type(4) a::before {
   background-position: -240px 0;
 }
+
 .cd-bouncy-nav li:nth-of-type(5) a::before {
   background-position: -320px 0;
 }
+
 .cd-bouncy-nav li:nth-of-type(6) a::before {
   background-position: -400px 0;
 }
+
 @media only screen and (min-width: 560px) {
   .pic {
     width: auto;
@@ -1449,7 +1187,6 @@ p.email-w3l {
     margin-bottom: 15px;
   }
 }
-
 @-webkit-keyframes cd-move-in {
   0% {
     -webkit-transform: translateY(100vh);
@@ -1527,16 +1264,12 @@ p.email-w3l {
     transform: translateY(-100vh);
   }
 }
-
-
-
 /* =====================================================================
    DESIGN REFRESH — токены, шапка, главная, правки вёрстки
    Блок добавлен поверх старых правил, старые селекторы не удалялись.
-   Дублируется в styles.scss и styles.css: SCSS компилируется в CSS,
-   поэтому правку нужно держать в обоих файлах.
+   styles.css собирается из этого файла: npx sass@1.77.8 --no-source-map styles.scss styles.css
+   (руками styles.css не править).
    ===================================================================== */
-
 /* минимальный сброс: раньше его давал Bootstrap, теперь его нет */
 *,
 *::before,
@@ -1555,16 +1288,16 @@ iframe {
 }
 
 :root {
-  --bg:            #0D1117;
-  --surface:       #161B22;
-  --surface-2:     #1C232C;
-  --border:        #2A323C;
-  --text:          #F8FAFC;
-  --text-muted:    #9AA7B5;
-  --brand:         #F5B301;
-  --brand-hover:   #FFC72C;
-  --on-brand:      #0D1117;
-  --radius:        10px;
+  --bg: #0D1117;
+  --surface: #161B22;
+  --surface-2: #1C232C;
+  --border: #2A323C;
+  --text: #F8FAFC;
+  --text-muted: #9AA7B5;
+  --brand: #F5B301;
+  --brand-hover: #FFC72C;
+  --on-brand: #0D1117;
+  --radius: 10px;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 16px;
@@ -1693,7 +1426,7 @@ button:focus-visible {
   color: var(--brand);
 }
 
-.site-nav a[aria-current="page"] {
+.site-nav a[aria-current=page] {
   color: var(--brand);
   background: var(--surface);
 }
@@ -1739,21 +1472,30 @@ button:focus-visible {
 
 /* телефон в шапке — начиная с крупных телефонов */
 @media (min-width: 480px) {
-  .header-phone { display: inline-flex; margin-left: auto; }
+  .header-phone {
+    display: inline-flex;
+    margin-left: auto;
+  }
 }
-
 /* горизонтальное меню появляется, когда все шесть пунктов реально помещаются;
    до этого остаётся бургер */
 @media (min-width: 992px) {
-  .site-nav { display: block; }
-  .header-phone { margin-left: var(--space-3); }
-  .cd-section { display: none; }
+  .site-nav {
+    display: block;
+  }
+  .header-phone {
+    margin-left: var(--space-3);
+  }
+  .cd-section {
+    display: none;
+  }
 }
-
 @media (min-width: 992px) and (max-width: 1100px) {
-  .site-nav a { padding: 10px 9px; font-size: 14px; }
+  .site-nav a {
+    padding: 10px 9px;
+    font-size: 14px;
+  }
 }
-
 /* ---------------------------------------------------
    ГЛАВНАЯ: первый экран
 --------------------------------------------------- */
@@ -1761,10 +1503,7 @@ button:focus-visible {
   position: relative;
   padding: var(--space-7) 0 var(--space-6);
   overflow: hidden;
-  background: 
-    radial-gradient(circle at 75% 45%, rgba(245, 179, 1, 0.1) 0%, rgba(22, 27, 34, 0) 55%),
-    radial-gradient(circle at 15% 25%, rgba(42, 50, 60, 0.3) 0%, transparent 45%),
-    var(--bg);
+  background: radial-gradient(circle at 75% 45%, rgba(245, 179, 1, 0.1) 0%, rgba(22, 27, 34, 0) 55%), radial-gradient(circle at 15% 25%, rgba(42, 50, 60, 0.3) 0%, transparent 45%), var(--bg);
 }
 
 .hero::before {
@@ -1772,9 +1511,7 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse at 60% 50%, black 20%, transparent 80%);
   -webkit-mask-image: radial-gradient(ellipse at 60% 50%, black 20%, transparent 80%);
@@ -1793,9 +1530,10 @@ button:focus-visible {
 }
 
 @media (min-width: 900px) {
-  .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
 }
-
 .hero h1 {
   font-size: clamp(30px, 5vw, 48px);
   line-height: 1.15;
@@ -1920,22 +1658,32 @@ button:focus-visible {
     transform: translateX(100%) rotate(15deg);
   }
 }
-
 @keyframes hero-glow-pulse {
-  0% { transform: scale(0.92); opacity: 0.7; }
-  100% { transform: scale(1.1); opacity: 1; }
+  0% {
+    transform: scale(0.92);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 }
-
 @keyframes radar-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 @keyframes radar-spin-rev {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
-
 .btn-row {
   display: flex;
   flex-wrap: wrap;
@@ -1993,8 +1741,6 @@ button:focus-visible {
   flex: none;
 }
 
-
-
 /* ---------------------------------------------------
    ДОВЕРИЕ / УСЛУГИ / ЦЕНЫ / КОНТАКТЫ
 --------------------------------------------------- */
@@ -2042,13 +1788,15 @@ button:focus-visible {
 }
 
 @media (min-width: 640px) {
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
 @media (min-width: 900px) {
-  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-
 .card {
   position: relative;
   background: linear-gradient(135deg, rgba(28, 35, 44, 0.7) 0%, rgba(22, 27, 34, 0.85) 100%);
@@ -2130,9 +1878,10 @@ button:focus-visible {
 }
 
 @media (min-width: 640px) {
-  .facts { grid-template-columns: repeat(3, 1fr); }
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-
 .fact {
   position: relative;
   background: linear-gradient(135deg, rgba(28, 35, 44, 0.7) 0%, rgba(22, 27, 34, 0.85) 100%);
@@ -2434,7 +2183,6 @@ button:focus-visible {
     transition: none !important;
   }
 }
-
 /* ---------------------------------------------------
    ФУТЕР (ТАКТИЧЕСКИЙ СТИЛЬ)
 --------------------------------------------------- */
@@ -2569,7 +2317,6 @@ footer.footer::before {
     transition-duration: 0.01ms !important;
   }
 }
-
 /* Футер на мобильных: старое правило схлопывало контейнер в width/height: 0,
    список уезжал флоатом вправо и давал горизонтальный скролл на 375px. */
 .bottom-w3lnav ul,
@@ -2583,7 +2330,6 @@ footer.footer::before {
     height: auto;
     text-align: center;
   }
-
   .bottom-w3lnav3 ul {
     float: none;
     width: 100%;
@@ -2591,21 +2337,17 @@ footer.footer::before {
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .bottom-w3lnav ul li a,
   .bottom-w3lnav3 ul li a {
     letter-spacing: 1px;
     padding: 0.5em 0.8em;
   }
 }
-
-
 /* =====================================================================
    ВНУТРЕННИЕ СТРАНИЦЫ
    Аккордеон на <details>, таблица прайса, текстовые блоки, контакты,
    благодарственные письма. Bootstrap и jQuery больше не подключаются.
    ===================================================================== */
-
 .page-title {
   padding: var(--space-6) 0 var(--space-4);
 }
@@ -2712,7 +2454,10 @@ footer.footer::before {
   flex-shrink: 0;
 }
 
-.legal-badge-icon svg { width: 18px; height: 18px; }
+.legal-badge-icon svg {
+  width: 18px;
+  height: 18px;
+}
 
 .legal-title {
   display: block;
@@ -2844,7 +2589,10 @@ footer.footer::before {
   transition: background 0.2s var(--ease), color 0.2s var(--ease);
 }
 
-.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
 .accordion summary h2 {
   margin: 0;
   font: inherit;
@@ -3009,7 +2757,6 @@ footer.footer::before {
   border-radius: 999px;
 }
 
-
 /* ---------------------------------------------------
    КАРТОЧКИ ФАКТОВ О КОМПАНИИ (О НАС)
 --------------------------------------------------- */
@@ -3056,8 +2803,6 @@ footer.footer::before {
   margin: 0;
 }
 
-
-
 .faq-section {
   margin-bottom: var(--space-5);
 }
@@ -3082,7 +2827,6 @@ footer.footer::before {
     gap: var(--space-5);
   }
 }
-
 .contact-block {
   display: flex;
   flex-direction: column;
@@ -3238,10 +2982,15 @@ footer.footer::before {
 }
 
 @keyframes pulse-green {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); opacity: 0.6; }
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
 }
-
 .map-frame iframe {
   display: block;
   width: 100%;
@@ -3304,7 +3053,6 @@ footer.footer::before {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
 .letters li {
   display: flex;
   flex-direction: column;
@@ -3331,7 +3079,7 @@ footer.footer::before {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 300 / 424;
+  aspect-ratio: 300/424;
   object-fit: cover;
   transition: filter 0.25s var(--ease);
 }
@@ -3343,13 +3091,9 @@ footer.footer::before {
   margin: 0;
 }
 
-
-
-
 /* =====================================================================
    ПРАЙС И ТАРИФЫ (PRICE & RATES)
    ===================================================================== */
-
 /* Сетка тарифов (Rate Cards 3x2) */
 .rates-grid {
   display: grid;
@@ -3363,13 +3107,11 @@ footer.footer::before {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (min-width: 992px) {
   .rates-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 .rate-card {
   position: relative;
   display: flex;
@@ -3577,7 +3319,10 @@ footer.footer::before {
   transform: translateY(-2px);
 }
 
-.to-top svg { width: 20px; height: 20px; }
+.to-top svg {
+  width: 20px;
+  height: 20px;
+}
 
 /* ---------------------------------------------------
    КНОПКИ МЕССЕНДЖЕРОВ (WHATSAPP & TELEGRAM)
@@ -3610,7 +3355,10 @@ footer.footer::before {
   box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
 }
 
-.wa-btn svg { width: 24px; height: 24px; }
+.wa-btn svg {
+  width: 24px;
+  height: 24px;
+}
 
 .tg-btn {
   bottom: calc(var(--space-3) + 54px);
@@ -3623,7 +3371,10 @@ footer.footer::before {
   box-shadow: 0 8px 22px rgba(42, 171, 238, 0.45);
 }
 
-.tg-btn svg { width: 22px; height: 22px; }
+.tg-btn svg {
+  width: 22px;
+  height: 22px;
+}
 
 @media (max-width: 600px) {
   .to-top {
@@ -3645,7 +3396,6 @@ footer.footer::before {
     height: 44px;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .tg-btn,
   .wa-btn,
