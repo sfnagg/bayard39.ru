@@ -888,19 +888,6 @@ p.email-w3l {
   color: #fff;
 }
 
-.top-nav .bottom-w3lnav {
-  background: none;
-  border-bottom: 1px solid #404040;
-  margin-bottom: 2em;
-  padding-bottom: 2em;
-}
-
-.bottom-w3lnav3 {
-  background: none;
-  margin-bottom: 2em;
-  padding-bottom: 2em;
-}
-
 .copy-w3right {
   background: transparent;
   padding: 1.5em 0;
@@ -922,70 +909,6 @@ p.email-w3l {
 
 .copy-w3right p a:hover {
   color: #fff;
-}
-
-.bottom-w3lnav {
-  width: 1140px;
-  max-width: 100%;
-  margin: 2em auto;
-  border-bottom: 1px solid #404040;
-  padding-bottom: 2em;
-}
-
-.bottom-w3lnav3 {
-  margin: 2em auto;
-  padding-bottom: 2em;
-}
-
-.bottom-w3lnav3 ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}
-
-.bottom-w3lnav3 ul li a:hover {
-  background: #FF5722;
-}
-
-.bottom-w3lnav3 ul li a {
-  text-decoration: none;
-  letter-spacing: 4px;
-  font-size: 1.1em;
-  color: #fff;
-  position: relative;
-  font-weight: 400;
-  padding: 0.5em 1.1em;
-  display: inline-block;
-  border-radius: 2px;
-  transition: 0.5s;
-}
-
-.bottom-w3lnav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}
-
-.bottom-w3lnav ul li a:hover {
-  background: #FF5722;
-}
-
-.bottom-w3lnav ul li a {
-  text-decoration: none;
-  letter-spacing: 4px;
-  font-size: 1.1em;
-  color: #fff;
-  position: relative;
-  font-weight: 400;
-  padding: 0.5em 1.1em;
-  display: inline-block;
-  border-radius: 2px;
-  transition: 0.5s;
-}
-
-.text-li-phone {
-  font-size: 15px;
-  padding-top: 10px;
 }
 
 .error {
@@ -2220,6 +2143,10 @@ footer.footer::before {
 
 .bottom-w3lnav {
   width: 100%;
+  /* гасит отступы и нижнюю линию из _legacy-base: разделитель один — border-top у .bottom-w3lnav3 */
+  margin: 0;
+  padding: 0;
+  border-bottom: 0;
 }
 
 .bottom-w3lnav ul {
@@ -2256,6 +2183,7 @@ footer.footer::before {
 .bottom-w3lnav3 {
   width: 100%;
   max-width: 800px;
+  margin: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 20px;
 }
@@ -2367,10 +2295,8 @@ footer.footer::before {
 .page-title p a,
 .prose a,
 .note a {
+  /* ссылки внутри текста: min-height 44px раздувал строки, WCAG 2.5.8 такие ссылки не требует увеличивать */
   color: var(--brand);
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
 }
 
 /* ---------------------------------------------------

@@ -23,10 +23,8 @@
 .page-title p a,
 .prose a,
 .note a {
+  /* ссылки внутри текста: min-height 44px раздувал строки, WCAG 2.5.8 такие ссылки не требует увеличивать */
   color: var(--brand);
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
 }
 
 /* ---------------------------------------------------
