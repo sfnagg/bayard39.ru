@@ -20,7 +20,7 @@ DAYS = 60
 
 until = (datetime.date.today() + datetime.timedelta(days=DAYS)).isoformat()
 text = io.open(PAGE, encoding="utf-8", newline="").read()
-new, count = re.subn(r'"validThrough": "\d{4}-\d{2}-\d{2}"',
+new, count = re.subn(r'"validThrough":\s*"\d{4}-\d{2}-\d{2}"',
                      '"validThrough": "%s"' % until, text)
 if not count:
     sys.exit("в %s не нашлось ни одного validThrough — разметка изменилась?" % PAGE)
