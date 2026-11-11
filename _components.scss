@@ -1,0 +1,604 @@
+/* ---------------------------------------------------
+   ДОВЕРИЕ / УСЛУГИ / ЦЕНЫ / КОНТАКТЫ
+--------------------------------------------------- */
+.section {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border);
+}
+
+.section h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(24px, 3.2vw, 32px);
+  margin: 0 0 var(--space-4);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-lead {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: calc(var(--space-4) * -1) 0 var(--space-5);
+}
+
+.section-lead a,
+.prose a,
+.lead a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 179, 1, 0.4);
+  text-underline-offset: 3px;
+  transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
+}
+
+.section-lead a:hover,
+.prose a:hover,
+.lead a:hover {
+  color: var(--brand-hover);
+  text-decoration-color: var(--brand-hover);
+}
+
+.grid-3 {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(28, 35, 44, 0.7) 0%, rgba(22, 27, 34, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 179, 1, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 24px rgba(245, 179, 1, 0.12);
+}
+
+.card .icon {
+  color: var(--brand);
+  width: 26px;
+  height: 26px;
+  padding: 10px;
+  box-sizing: content-box;
+  background: rgba(245, 179, 1, 0.08);
+  border: 1px solid rgba(245, 179, 1, 0.2);
+  border-radius: 10px;
+  margin-bottom: 4px;
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.card:hover .icon {
+  background: rgba(245, 179, 1, 0.16);
+  border-color: rgba(245, 179, 1, 0.45);
+  transform: scale(1.05);
+}
+
+.card h3 {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.card-link {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  color: var(--brand);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.card-link:hover {
+  color: var(--brand-hover);
+  transform: translateX(4px);
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .facts { grid-template-columns: repeat(3, 1fr); }
+}
+
+.fact {
+  position: relative;
+  background: linear-gradient(135deg, rgba(28, 35, 44, 0.7) 0%, rgba(22, 27, 34, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--brand);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.fact:hover {
+  transform: translateY(-3px);
+  border-color: rgba(245, 179, 1, 0.35);
+  border-left-color: var(--brand-hover);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 24px rgba(245, 179, 1, 0.14);
+}
+
+.fact b {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(16px, 1.65vw, 20px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.fact b a {
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: color 0.2s var(--ease);
+}
+
+.fact b a:hover {
+  color: var(--brand);
+}
+
+.fact b a::after {
+  content: "→";
+  font-size: 18px;
+  color: var(--brand);
+  transition: transform 0.2s var(--ease);
+}
+
+.fact:hover b a::after {
+  transform: translateX(4px);
+}
+
+.fact span {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.fact .fact-code {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #B5C2D0;
+  letter-spacing: 0.01em;
+}
+
+/* текстовые ссылки внутри контентных блоков */
+.fact a,
+.card p a,
+.panel-body a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-decoration-color: rgba(245, 179, 1, 0.4);
+  text-underline-offset: 3px;
+  transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
+}
+
+.fact a:hover,
+.card p a:hover,
+.panel-body a:hover {
+  color: var(--brand-hover);
+  text-decoration-color: var(--brand-hover);
+}
+
+.fact span {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.price-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  background: linear-gradient(135deg, rgba(28, 35, 44, 0.75) 0%, rgba(22, 27, 34, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.price-strip p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.price-strip b {
+  color: var(--brand);
+  font-size: 26px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 20px rgba(245, 179, 1, 0.25);
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.contact-list li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: 16px;
+}
+
+.contact-list svg {
+  width: 20px;
+  height: 20px;
+  color: var(--brand);
+  flex: none;
+  padding: 8px;
+  box-sizing: content-box;
+  background: rgba(245, 179, 1, 0.08);
+  border: 1px solid rgba(245, 179, 1, 0.18);
+  border-radius: 8px;
+}
+
+.contact-list a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  transition: color 0.2s var(--ease);
+}
+
+.contact-list a:hover {
+  color: var(--brand);
+}
+
+.contact-note {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ---------------------------------------------------
+   LIGHTBOX ДЛЯ БЛАГОДАРСТВЕННЫХ ПИСЕМ
+--------------------------------------------------- */
+.letter-lightbox {
+  border: none;
+  background: transparent;
+  padding: 0;
+  max-width: 90vw;
+  max-height: 90vh;
+  margin: auto;
+  outline: none;
+  overflow: visible;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.letter-lightbox.is-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.letter-lightbox::backdrop {
+  background: rgba(13, 17, 23, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.2s var(--ease);
+}
+
+.letter-lightbox.is-open::backdrop {
+  opacity: 1;
+}
+
+.letter-lightbox-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #11151B;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 40px rgba(245, 179, 1, 0.15);
+  overflow: hidden;
+  max-height: 90vh;
+}
+
+.letter-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, transform 0.2s, color 0.2s;
+}
+
+.letter-lightbox-close:hover {
+  background: var(--brand);
+  color: #000;
+  border-color: var(--brand);
+  transform: scale(1.1);
+}
+
+.letter-lightbox-img {
+  max-width: 100%;
+  max-height: calc(85vh - 50px);
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.letter-lightbox-caption {
+  margin: 0;
+  padding: 12px 18px;
+  font-size: 14px;
+  color: var(--text);
+  text-align: center;
+  width: 100%;
+  background: rgba(22, 27, 34, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------------------------------------------------
+   SCROLL REVEAL (КИНЕМАТОГРАФИЧНОЕ ПОЯВЛЕНИЕ)
+--------------------------------------------------- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.facts .fact.reveal-on-scroll:nth-child(2),
+.cards .card.reveal-on-scroll:nth-child(2),
+.letters li.reveal-on-scroll:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.facts .fact.reveal-on-scroll:nth-child(3),
+.cards .card.reveal-on-scroll:nth-child(3),
+.letters li.reveal-on-scroll:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.cards .card.reveal-on-scroll:nth-child(4),
+.letters li.reveal-on-scroll:nth-child(4) {
+  transition-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------------------------------------------------
+   ФУТЕР (ТАКТИЧЕСКИЙ СТИЛЬ)
+--------------------------------------------------- */
+footer.footer {
+  background: #0A0D12;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 36px 0 28px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+footer.footer::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand), transparent);
+}
+
+.footer-inlin {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  text-align: center;
+  width: 100%;
+}
+
+.bottom-w3lnav {
+  width: 100%;
+}
+
+.bottom-w3lnav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-w3lnav a {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: normal !important;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.bottom-w3lnav a:hover {
+  color: var(--brand);
+  background: rgba(245, 179, 1, 0.08);
+}
+
+.bottom-w3lnav3 {
+  width: 100%;
+  max-width: 800px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+}
+
+.bottom-w3lnav3 ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-w3lnav3 a,
+.text-li-phone a {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: normal !important;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s var(--ease);
+}
+
+.bottom-w3lnav3 a:hover,
+.text-li-phone a:hover {
+  color: var(--brand);
+}
+
+.bottom-w3lnav3 p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: normal !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bottom-w3lnav3 p a {
+  color: var(--brand);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------
+   ПРАВКИ СТАРОЙ ВЁРСТКИ
+--------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Футер на мобильных: старое правило схлопывало контейнер в width/height: 0,
+   список уезжал флоатом вправо и давал горизонтальный скролл на 375px. */
+.bottom-w3lnav ul,
+.bottom-w3lnav3 ul {
+  padding-left: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .bottom-w3lnav3 {
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
+  .bottom-w3lnav3 ul {
+    float: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bottom-w3lnav ul li a,
+  .bottom-w3lnav3 ul li a {
+    letter-spacing: 1px;
+    padding: 0.5em 0.8em;
+  }
+}
+

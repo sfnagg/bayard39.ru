@@ -25,7 +25,8 @@
 | `compani/contacts.html` | Контакты |
 | `404.html` | Страница ошибки, `noindex` |
 
-Стили — `styles.scss` → `styles.css`. Скрипты — `js/site.js`. Сканы благодарственных
+Стили — `styles.scss` и партиалы `_*.scss` → `styles.css`. После правки SCSS пересобрать:
+`npx sass@1.77.8 --no-source-map styles.scss styles.css` и закоммитить оба файла. Скрипты — `js/site.js`. Сканы благодарственных
 писем — `letters/`, превью к ним — `letters/thumb/`.
 
 Файлы `google63…html`, `yandex_…html`, `mailru-…html` подтверждают права в панелях

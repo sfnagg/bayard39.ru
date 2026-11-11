@@ -1,0 +1,745 @@
+/* =====================================================================
+   ВНУТРЕННИЕ СТРАНИЦЫ
+   Аккордеон на <details>, таблица прайса, текстовые блоки, контакты,
+   благодарственные письма. Bootstrap и jQuery больше не подключаются.
+   ===================================================================== */
+
+.page-title {
+  padding: var(--space-6) 0 var(--space-4);
+}
+
+.page-title h1 {
+  font-size: clamp(28px, 4.5vw, 40px);
+  margin: 0;
+  color: var(--brand);
+}
+
+.page-title p {
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+  max-width: 70ch;
+}
+
+.page-title p a,
+.prose a,
+.note a {
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+/* ---------------------------------------------------
+   ТЕКСТОВЫЕ БЛОКИ
+--------------------------------------------------- */
+.prose {
+  max-width: 72ch;
+}
+
+.prose p {
+  margin: 0 0 var(--space-3);
+  color: var(--text-muted);
+}
+
+.prose > p:first-child {
+  color: var(--text);
+}
+
+.prose ul {
+  margin: 0 0 var(--space-4);
+  padding-left: 0;
+  list-style: none;
+}
+
+.prose ul li {
+  position: relative;
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-2);
+  color: var(--text-muted);
+}
+
+.prose ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+.note {
+  color: var(--text-muted);
+  font-size: 14px;
+  max-width: 72ch;
+}
+
+/* ---------------------------------------------------
+   КАРТОЧКА СТАТУСА И ВИДОВ ДЕЯТЕЛЬНОСТИ (О НАС)
+--------------------------------------------------- */
+.legal-card {
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(245, 179, 1, 0.05);
+  margin-bottom: var(--space-4);
+}
+
+.legal-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(245, 179, 1, 0.08);
+  border: 1px solid rgba(245, 179, 1, 0.25);
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.legal-badge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: rgba(245, 179, 1, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.legal-badge-icon svg { width: 18px; height: 18px; }
+
+.legal-title {
+  display: block;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.legal-date {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.legal-lead {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0 0 18px 0;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 12px 14px;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.activity-item:hover {
+  border-color: rgba(245, 179, 1, 0.3);
+  background: rgba(245, 179, 1, 0.03);
+}
+
+.activity-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(245, 179, 1, 0.15);
+  color: var(--brand);
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.activity-text strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.activity-text span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.about-approach-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(22, 27, 34, 0.8);
+  border-left: 3px solid var(--brand);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.about-approach-banner strong {
+  color: var(--text);
+}
+
+/* ---------------------------------------------------
+   АККОРДЕОН НА <details> — без JS и без Bootstrap
+--------------------------------------------------- */
+.accordion {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 960px;
+}
+
+.accordion details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.accordion details[open] {
+  border-color: rgba(245, 179, 1, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.accordion summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 60px;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  list-style: none;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary h2 {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  flex: 1 1 auto;
+}
+
+.summary-salary {
+  margin-left: auto;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--brand);
+  background: rgba(245, 179, 1, 0.1);
+  border: 1px solid rgba(245, 179, 1, 0.25);
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.accordion summary:hover {
+  background: var(--surface-2);
+  color: var(--brand);
+}
+
+.accordion summary::after {
+  content: "";
+  margin-left: 12px;
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border-right: 2px solid var(--brand);
+  border-bottom: 2px solid var(--brand);
+  transform: rotate(-45deg);
+  transition: transform 0.2s var(--ease);
+}
+
+.accordion details[open] summary {
+  color: var(--brand);
+  border-bottom: 1px solid var(--border);
+}
+
+.accordion details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.accordion .panel-body {
+  padding: 20px;
+}
+
+.vacancy-terms {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 179, 1, 0.08);
+  border: 1px solid rgba(245, 179, 1, 0.2);
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin: 0 0 var(--space-3) !important;
+  color: var(--text) !important;
+  font-size: 15px;
+}
+
+.vacancy-terms strong {
+  color: var(--brand);
+}
+
+.accordion .panel-body p,
+.accordion .panel-body li {
+  color: var(--text-muted);
+  margin: 0 0 var(--space-2);
+}
+
+.accordion .panel-body ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.accordion .panel-body ul li {
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.accordion .panel-body ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+/* Условия на странице вакансий */
+.usloviya {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 960px;
+}
+
+.usloviya li {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px 16px 44px;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.usloviya li:hover {
+  border-color: rgba(245, 179, 1, 0.35);
+  transform: translateY(-2px);
+}
+
+.usloviya li strong {
+  display: block;
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.usloviya li::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 10px rgba(245, 179, 1, 0.5);
+}
+
+.vacancies-heading-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: var(--space-5) 0 var(--space-3);
+}
+
+.vacancies-heading-wrap h2 {
+  margin: 0;
+}
+
+.vacancies-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+  background: rgba(245, 179, 1, 0.1);
+  border: 1px solid rgba(245, 179, 1, 0.25);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+
+/* ---------------------------------------------------
+   КАРТОЧКИ ФАКТОВ О КОМПАНИИ (О НАС)
+--------------------------------------------------- */
+.fact-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px;
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.fact-card:hover {
+  border-color: rgba(245, 179, 1, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(245, 179, 1, 0.06);
+}
+
+.fact-card-metric {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--brand);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 12px;
+  display: inline-block;
+  text-shadow: 0 0 16px rgba(245, 179, 1, 0.25);
+}
+
+.fact-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px 0;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.fact-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+
+.faq-section {
+  margin-bottom: var(--space-5);
+}
+
+.faq-section h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* ---------------------------------------------------
+   КОНТАКТЫ
+--------------------------------------------------- */
+.contacts-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .contacts-grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: var(--space-5);
+  }
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-item {
+  background: linear-gradient(180deg, rgba(22, 27, 34, 0.95), rgba(13, 17, 23, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.contact-item:hover {
+  border-color: rgba(245, 179, 1, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(245, 179, 1, 0.08);
+}
+
+.contact-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(245, 179, 1, 0.1);
+  border: 1px solid rgba(245, 179, 1, 0.25);
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.contact-badge-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.contact-item-header h2 {
+  margin: 0;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-phone-link {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.contact-phone-link:hover {
+  color: var(--brand);
+  transform: translateX(3px);
+}
+
+.contact-mail-link {
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+.contact-mail-link:hover {
+  color: var(--brand-hover);
+  text-decoration: underline;
+}
+
+.contact-address-text {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.contact-hint {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--brand);
+  background: rgba(245, 179, 1, 0.1);
+  padding: 1px 7px;
+  border-radius: 4px;
+  margin-left: 4px;
+}
+
+.contact-subtext {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.map-frame {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #11151B;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(245, 179, 1, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+}
+
+.map-frame-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(17, 21, 27, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  z-index: 2;
+}
+
+.map-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  flex-shrink: 0;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 380px;
+  border: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.social-links a:hover {
+  border-color: #2787F5;
+  color: #fff;
+  background: rgba(39, 135, 245, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(39, 135, 245, 0.3);
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------------------------------------------------
+   БЛАГОДАРСТВЕННЫЕ ПИСЬМА
+--------------------------------------------------- */
+.letters {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .letters {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.letters li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.letters a {
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #11151B;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.letters a:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(245, 179, 1, 0.5);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(245, 179, 1, 0.15);
+}
+
+.letters img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 300 / 424;
+  object-fit: cover;
+  transition: filter 0.25s var(--ease);
+}
+
+.letters .note {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+
+

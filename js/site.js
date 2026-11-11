@@ -61,5 +61,117 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     }
+
+    // 3D Tilt эффект герба в hero-секции (кинематографичный ракурс)
+    var heroVisual = document.querySelector('.hero-visual');
+    var artCard = document.querySelector('.hero-art-card');
+    if (heroVisual && artCard && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      var rafId = null;
+      var curX = 0, curY = 0, targetX = 0, targetY = 0;
+
+      var updateTilt = function () {
+        curX += (targetX - curX) * 0.12;
+        curY += (targetY - curY) * 0.12;
+        artCard.style.transform = 'rotateX(' + (-curY * 13).toFixed(2) + 'deg) rotateY(' + (curX * 15).toFixed(2) + 'deg) translateZ(8px)';
+        if (Math.abs(targetX - curX) > 0.001 || Math.abs(targetY - curY) > 0.001) {
+          rafId = requestAnimationFrame(updateTilt);
+        } else {
+          rafId = null;
+        }
+      };
+
+      heroVisual.addEventListener('mousemove', function (e) {
+        var rect = heroVisual.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        targetX = Math.max(-1, Math.min(1, x * 2));
+        targetY = Math.max(-1, Math.min(1, y * 2));
+        if (!rafId) rafId = requestAnimationFrame(updateTilt);
+      });
+
+      heroVisual.addEventListener('mouseleave', function () {
+        targetX = 0;
+        targetY = 0;
+        if (!rafId) rafId = requestAnimationFrame(updateTilt);
+      });
+    }
+
+    // Интерактивный Lightbox для благодарственных писем
+    var lettersLinks = document.querySelectorAll('.letters a');
+    if (lettersLinks.length > 0) {
+      var modal = document.createElement('dialog');
+      modal.className = 'letter-lightbox';
+      modal.innerHTML = '<div class="letter-lightbox-content">' +
+        '<button type="button" class="letter-lightbox-close" aria-label="Закрыть">&times;</button>' +
+        '<img src="" alt="" class="letter-lightbox-img">' +
+        '<p class="letter-lightbox-caption"></p>' +
+        '</div>';
+      document.body.appendChild(modal);
+
+      var modalImg = modal.querySelector('.letter-lightbox-img');
+      var modalCaption = modal.querySelector('.letter-lightbox-caption');
+      var closeBtn = modal.querySelector('.letter-lightbox-close');
+
+      var closeModal = function () {
+        modal.classList.remove('is-open');
+        setTimeout(function () {
+          if (modal.open) modal.close();
+        }, 200);
+      };
+
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeModal();
+      });
+
+      lettersLinks.forEach(function (link) {
+        link.removeAttribute('target');
+        link.addEventListener('click', function (e) {
+          if (e.ctrlKey || e.metaKey || e.shiftKey) return;
+          e.preventDefault();
+          var href = link.getAttribute('href');
+          var note = link.closest('li') ? link.closest('li').querySelector('.note') : null;
+          var captionText = note ? note.textContent.trim() : '';
+
+          modalImg.src = href;
+          modalImg.alt = captionText;
+          modalCaption.textContent = captionText;
+
+          if (typeof modal.showModal === 'function') {
+            modal.showModal();
+            requestAnimationFrame(function () {
+              modal.classList.add('is-open');
+            });
+          } else {
+            window.open(href, '_blank');
+          }
+        });
+      });
+    }
+
+    // Кинематографичный Scroll Reveal для ключевых блоков
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var revealTargets = document.querySelectorAll(
+        '.fact, .card, .letters li, .price-strip, .section > h2, .contact-list, details'
+      );
+      if (revealTargets.length > 0) {
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.08,
+          rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealTargets.forEach(function (el) {
+          el.classList.add('reveal-on-scroll');
+          revealObserver.observe(el);
+        });
+      }
+    }
   });
 })();
