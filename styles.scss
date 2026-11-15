@@ -432,10 +432,11 @@ button:focus-visible {
 }
 
 @media (min-width: 900px) {
-  .page-title { min-height: 300px; display: flex; align-items: center; overflow: hidden; }
-  .page-title .container { width: 100%; }
-  .page-title h1,
-  .page-title p { max-width: 54%; }
+  /* только шапки со сценой: остальные страницы остаются как были */
+  .page-title:has(.sh-mini) { min-height: 300px; display: flex; align-items: center; overflow: hidden; }
+  .page-title:has(.sh-mini) .container { width: 100%; }
+  .page-title:has(.sh-mini) h1,
+  .page-title:has(.sh-mini) p { max-width: 54%; }
 
   .sh-mini {
     position: absolute;
