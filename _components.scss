@@ -607,3 +607,14 @@ footer.footer::before {
   }
 }
 
+
+/* Компактные карточки-ссылки («Другие услуги»): только название и переход */
+.grid-3.links { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+
+@media (min-width: 900px) {
+  .grid-3.links { grid-template-columns: repeat(4, 1fr); }
+}
+
+.links .card { padding: 20px; gap: var(--space-2); }
+.links .card .icon { display: none; }
+.links .card h3 { font-size: 17px; }

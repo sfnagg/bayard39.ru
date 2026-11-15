@@ -211,15 +211,16 @@ button:focus-visible {
 }
 
 /* телефон в шапке — начиная с крупных телефонов */
-@media (min-width: 480px) {
-  .header-phone { display: inline-flex; margin-left: auto; }
+@media (min-width: 560px) {
+  /* справа место под фиксированную кнопку меню */
+  .header-phone { display: inline-flex; margin-left: auto; margin-right: 76px; }
 }
 
 /* горизонтальное меню появляется, когда все шесть пунктов реально помещаются;
    до этого остаётся бургер */
 @media (min-width: 992px) {
   .site-nav { display: block; }
-  .header-phone { margin-left: var(--space-3); }
+  .header-phone { margin-left: var(--space-3); margin-right: 0; }
   .cd-section { display: none; }
 }
 
@@ -325,7 +326,7 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(0deg, rgba(13, 17, 23, 0.96) 0%, rgba(13, 17, 23, 0.8) 40%, transparent 62%);
+  background: linear-gradient(0deg, rgba(13, 17, 23, 0.96) 0%, rgba(13, 17, 23, 0.85) 48%, transparent 70%);
 }
 
 .js .sh-caps {
@@ -433,12 +434,13 @@ button:focus-visible {
 @media (min-width: 900px) {
   .page-title { min-height: 300px; display: flex; align-items: center; overflow: hidden; }
   .page-title .container { width: 100%; }
-  .page-title p { max-width: 52ch; }
+  .page-title h1,
+  .page-title p { max-width: 54%; }
 
   .sh-mini {
     position: absolute;
     inset: 0 0 0 auto;
-    width: 48%;
+    width: 44%;
     height: auto;
     margin: 0;
     mask-image: linear-gradient(90deg, transparent 0%, #000 30%);

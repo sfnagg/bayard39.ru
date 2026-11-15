@@ -1394,10 +1394,12 @@ button:focus-visible {
 }
 
 /* телефон в шапке — начиная с крупных телефонов */
-@media (min-width: 480px) {
+@media (min-width: 560px) {
+  /* справа место под фиксированную кнопку меню */
   .header-phone {
     display: inline-flex;
     margin-left: auto;
+    margin-right: 76px;
   }
 }
 /* горизонтальное меню появляется, когда все шесть пунктов реально помещаются;
@@ -1408,6 +1410,7 @@ button:focus-visible {
   }
   .header-phone {
     margin-left: var(--space-3);
+    margin-right: 0;
   }
   .cd-section {
     display: none;
@@ -1528,7 +1531,7 @@ button:focus-visible {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: linear-gradient(0deg, rgba(13, 17, 23, 0.96) 0%, rgba(13, 17, 23, 0.8) 40%, transparent 62%);
+    background: linear-gradient(0deg, rgba(13, 17, 23, 0.96) 0%, rgba(13, 17, 23, 0.85) 48%, transparent 70%);
   }
   .js .sh-caps {
     position: absolute;
@@ -1642,13 +1645,14 @@ button:focus-visible {
   .page-title .container {
     width: 100%;
   }
+  .page-title h1,
   .page-title p {
-    max-width: 52ch;
+    max-width: 54%;
   }
   .sh-mini {
     position: absolute;
     inset: 0 0 0 auto;
-    width: 48%;
+    width: 44%;
     height: auto;
     margin: 0;
     mask-image: linear-gradient(90deg, transparent 0%, #000 30%);
@@ -2391,6 +2395,30 @@ footer.footer::before {
     padding: 0.5em 0.8em;
   }
 }
+/* Компактные карточки-ссылки («Другие услуги»): только название и переход */
+.grid-3.links {
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 900px) {
+  .grid-3.links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.links .card {
+  padding: 20px;
+  gap: var(--space-2);
+}
+
+.links .card .icon {
+  display: none;
+}
+
+.links .card h3 {
+  font-size: 17px;
+}
+
 /* =====================================================================
    ВНУТРЕННИЕ СТРАНИЦЫ
    Аккордеон на <details>, таблица прайса, текстовые блоки, контакты,

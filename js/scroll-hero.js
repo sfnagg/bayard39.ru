@@ -176,7 +176,9 @@
       if (!W || !H) return;
       function cam(n) {
         var o = OBJ[n - 1];
-        if (!n) return { x: 58, y: -5, z: 0, k: mini ? Math.min(W / 2700, H / 1500) : Math.max(W / 3000, 0.17), cx: mini ? 0.5 : wide ? 0.56 : 0.5, cy: mini ? 0.5 : wide ? 0.6 : 0.32, car: mini ? 16 : -8 };
+        // панорама: на главной — весь квартал, в шапке внутренних страниц — крупный фрагмент
+        if (!n) return mini ? { x: 46, y: -5, z: 2, k: Math.min(1, H / 520), cx: 0.5, cy: 0.55, car: 50 }
+                            : { x: 58, y: -5, z: 0, k: Math.max(W / 3000, 0.17), cx: wide ? 0.56 : 0.5, cy: wide ? 0.6 : 0.17, car: -8 };
         return {
           x: o.c, y: -6, z: o.h / 2, car: o.c + 6,
           k: mini ? Math.min(W / 680, H / (o.h * U + 250), 1) : Math.max(0.5, Math.min(W / 1150, H / 780, 1.1)),
