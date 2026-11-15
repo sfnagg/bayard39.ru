@@ -96,8 +96,6 @@ button:focus-visible {
 --------------------------------------------------- */
 .site-header {
   background: rgba(13, 17, 23, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -211,15 +209,16 @@ button:focus-visible {
 }
 
 /* телефон в шапке — начиная с крупных телефонов */
-@media (min-width: 480px) {
-  .header-phone { display: inline-flex; margin-left: auto; }
+@media (min-width: 560px) {
+  /* справа место под фиксированную кнопку меню */
+  .header-phone { display: inline-flex; margin-left: auto; margin-right: 76px; }
 }
 
 /* горизонтальное меню появляется, когда все шесть пунктов реально помещаются;
    до этого остаётся бургер */
 @media (min-width: 992px) {
   .site-nav { display: block; }
-  .header-phone { margin-left: var(--space-3); }
+  .header-phone { margin-left: var(--space-3); margin-right: 0; }
   .cd-section { display: none; }
 }
 
@@ -228,186 +227,264 @@ button:focus-visible {
 }
 
 /* ---------------------------------------------------
-   ГЛАВНАЯ: первый экран
+   СЦЕНА «ОБЪЕКТЫ ПОД ОХРАНОЙ» (js/scroll-hero.js)
+   Без JS и при prefers-reduced-motion на главной остаётся
+   статичная панорама и обычный список ссылок.
 --------------------------------------------------- */
-.hero {
+.sh {
   position: relative;
-  padding: var(--space-7) 0 var(--space-6);
+  background: var(--bg);
+}
+
+.sh-view,
+.sh-mini {
+  position: relative;
+  height: 46vh;
+  min-height: 280px;
   overflow: hidden;
-  background: 
-    radial-gradient(circle at 75% 45%, rgba(245, 179, 1, 0.1) 0%, rgba(22, 27, 34, 0) 55%),
-    radial-gradient(circle at 15% 25%, rgba(42, 50, 60, 0.3) 0%, transparent 45%),
-    var(--bg);
 }
 
-.hero::before {
-  content: "";
+.sh-view svg,
+.sh-mini svg {
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse at 60% 50%, black 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse at 60% 50%, black 20%, transparent 80%);
-  z-index: 0;
+  left: 0;
+  top: 0;
+  max-width: none;
+  transform-origin: 0 0;
+  will-change: transform;
 }
 
-.hero .container {
-  position: relative;
-  z-index: 1;
-}
+.sh-moving * { animation-play-state: paused; }
 
-.hero-grid {
+.sh-caps {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3) var(--space-6);
   display: grid;
   gap: var(--space-5);
-  align-items: center;
 }
 
-@media (min-width: 900px) {
-  .hero-grid { grid-template-columns: 1.15fr 0.85fr; }
-}
-
-.hero h1 {
-  font-size: clamp(30px, 5vw, 48px);
+.sh-cap h1,
+.sh-cap h2 {
+  margin: 0 0 var(--space-3);
   line-height: 1.15;
   font-weight: 700;
-  margin: 0 0 var(--space-3);
-  color: var(--text);
   letter-spacing: -0.02em;
+  color: var(--text);
 }
 
-.hero h1 em {
+.sh-cap h1 { font-size: clamp(30px, 5vw, 48px); }
+.sh-cap h2 { font-size: clamp(28px, 4.4vw, 44px); }
+
+.sh-cap h1 em {
   font-style: normal;
   color: var(--brand);
   text-shadow: 0 0 30px rgba(245, 179, 1, 0.4);
 }
 
-.hero-lead {
+.sh-cap p {
+  margin: 0 0 var(--space-4);
+  max-width: 56ch;
+  color: var(--text-muted);
   font-size: clamp(16px, 2vw, 19px);
   line-height: 1.6;
-  color: var(--text-muted);
-  max-width: 56ch;
-  margin: 0 0 var(--space-5);
 }
 
-/* Визуальная зона со щитом, радаром и 3D-эффектом */
-.hero-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 380px;
-  perspective: 1000px;
-}
+/* Номер объекта и подсказка — оформление, поэтому в CSS, а не в разметке */
+.sh-caps { counter-reset: sh -1; }
+.sh-cap { counter-increment: sh; }
 
-.hero-glow {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(245, 179, 1, 0.22) 0%, rgba(245, 179, 1, 0.04) 45%, transparent 70%);
-  filter: blur(35px);
-  pointer-events: none;
-  z-index: 0;
-  animation: hero-glow-pulse 6s ease-in-out infinite alternate;
-}
-
-.hero-radar-ring {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px dashed rgba(245, 179, 1, 0.16);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-radar-ring.ring-1 {
-  width: 380px;
-  height: 380px;
-  animation: radar-spin 35s linear infinite;
-}
-
-.hero-radar-ring.ring-2 {
-  width: 490px;
-  height: 490px;
-  border-color: rgba(255, 255, 255, 0.05);
-  border-style: solid;
-  animation: radar-spin-rev 50s linear infinite;
-}
-
-.hero-art-card {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-  transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1);
-  will-change: transform;
-}
-
-.hero-art {
-  margin: 0 auto;
-  max-width: 360px;
-  width: 100%;
-  height: auto;
+.sh-cap + .sh-cap::before {
+  content: "0" counter(sh) " / 05";
   display: block;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 35px rgba(245, 179, 1, 0.25));
-  transition: filter 0.3s ease;
-  user-select: none;
+  margin-bottom: var(--space-2);
+  color: var(--brand);
+  font: 700 13px/1 Montserrat, sans-serif;
+  letter-spacing: 0.14em;
 }
 
-.hero-art-card:hover .hero-art {
-  filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 50px rgba(245, 179, 1, 0.45));
+.sh-dots { display: none; }
+
+/* Скролл-режим: класс .js на <html> ставит инлайн-скрипт в <head>, до первой отрисовки */
+@media (prefers-reduced-motion: no-preference) {
+.js .sh { height: 500vh; }
+
+.js .sh-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
 }
 
-.hero-sheen {
+.js .sh-view {
   position: absolute;
-  inset: -15%;
+  inset: 0;
+  height: auto;
+}
+
+.js .sh-view::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   pointer-events: none;
-  z-index: 2;
-  border-radius: 20px;
-  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.18) 50%, transparent 65%);
+  background: linear-gradient(0deg, rgba(13, 17, 23, 0.96) 0%, rgba(13, 17, 23, 0.85) 48%, transparent 70%);
+}
+
+.js .sh-caps {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  padding: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.js .sh-cap {
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: 96px; /* над плавающими кнопками мессенджеров */
   opacity: 0;
-  transform: translateX(-100%);
-  animation: sheen-sweep 7s ease-in-out infinite;
-  mask-image: radial-gradient(circle, black 60%, transparent 80%);
-  -webkit-mask-image: radial-gradient(circle, black 60%, transparent 80%);
+  transform: translateY(16px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
 }
 
-@keyframes sheen-sweep {
-  0%, 65% {
-    opacity: 0;
-    transform: translateX(-100%) rotate(15deg);
+.js .sh-cap.on {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.js .sh-cap:first-child::after {
+  content: "Листайте — покажем, что мы охраняем ↓";
+  display: block;
+  margin-top: var(--space-4);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.js .sh-dots {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.sh-dots button {
+  width: 44px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.sh-dots button::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: auto;
+  border-radius: 50%;
+  background: #5c6773;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.sh-dots button[aria-current]::before {
+  background: var(--brand);
+  transform: scale(1.5);
+}
+
+.sh-dots button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: -4px;
+}
+
+@media (min-width: 900px) {
+  .js .sh-view::after {
+    background: linear-gradient(90deg, rgba(13, 17, 23, 0.97) 0%, rgba(13, 17, 23, 0.88) 38%, transparent 62%);
   }
-  70% {
-    opacity: 1;
+
+  .js .sh-cap {
+    left: max(var(--space-3), calc((100vw - var(--container)) / 2));
+    right: auto;
+    bottom: auto;
+    top: 50%;
+    width: 460px;
+    transform: translateY(calc(-50% + 16px));
   }
-  85% {
-    opacity: 1;
-    transform: translateX(100%) rotate(15deg);
-  }
-  90%, 100% {
-    opacity: 0;
-    transform: translateX(100%) rotate(15deg);
+
+  .js .sh-cap.on { transform: translateY(-50%); }
+  .js .sh-dots { display: flex; right: var(--space-3); top: 50%; }
+}
+
+} /* конец скролл-режима */
+
+/* Кадр сцены в шапке внутренних страниц */
+.page-title { position: relative; }
+.page-title .container { position: relative; z-index: 1; }
+
+.sh-mini {
+  height: 200px;
+  min-height: 0;
+  margin-top: var(--space-3);
+}
+
+@media (min-width: 900px) {
+  /* только шапки со сценой: остальные страницы остаются как были */
+  .page-title:has(.sh-mini) { min-height: 300px; display: flex; align-items: center; overflow: hidden; }
+  .page-title:has(.sh-mini) .container { width: 100%; }
+  .page-title:has(.sh-mini) h1,
+  .page-title:has(.sh-mini) p { max-width: 54%; }
+
+  .sh-mini {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 44%;
+    height: auto;
+    margin: 0;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 30%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 30%);
   }
 }
 
-@keyframes hero-glow-pulse {
-  0% { transform: scale(0.92); opacity: 0.7; }
-  100% { transform: scale(1.1); opacity: 1; }
+/* Детали сцены */
+.sh-grid { stroke: rgba(255, 255, 255, 0.045); stroke-width: 1; fill: none; }
+
+.sh-perim {
+  fill: rgba(245, 179, 1, 0.04);
+  stroke: rgba(245, 179, 1, 0.5);
+  stroke-width: 1.5;
+  stroke-dasharray: 10 8;
+  animation: sh-march 1.2s linear infinite;
 }
 
-@keyframes radar-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.sh-pulse {
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sh-pulse 3.2s var(--ease) infinite;
 }
 
-@keyframes radar-spin-rev {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+.sh-pin { animation: sh-float 2.4s ease-in-out infinite alternate; }
+.sh-blink { animation: sh-blink 1s steps(2) infinite; }
+.sh-beam { animation: sh-blink 2.6s ease-in-out infinite alternate; }
+
+@keyframes sh-march { to { stroke-dashoffset: -18; } }
+@keyframes sh-pulse { from { transform: scale(0.15); opacity: 0.9; } to { transform: scale(1); opacity: 0; } }
+@keyframes sh-float { to { transform: translateY(-8px); } }
+@keyframes sh-blink { from { opacity: 1; } to { opacity: 0.25; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sh-perim, .sh-pulse, .sh-pin, .sh-blink, .sh-beam { animation: none; }
+  .sh-pulse { opacity: 0.35; }
 }
+
 
 .btn-row {
   display: flex;
