@@ -96,8 +96,6 @@ button:focus-visible {
 --------------------------------------------------- */
 .site-header {
   background: rgba(13, 17, 23, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -249,10 +247,14 @@ button:focus-visible {
 .sh-view svg,
 .sh-mini svg {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  left: 0;
+  top: 0;
+  max-width: none;
+  transform-origin: 0 0;
+  will-change: transform;
 }
+
+.sh-moving * { animation-play-state: paused; }
 
 .sh-caps {
   max-width: var(--container);

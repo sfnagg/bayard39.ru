@@ -10,6 +10,7 @@
       GOLD = ['#FFC72C', '#F5B301', '#b98700'], STEEL = ['#c9d2db', '#9AA7B5', '#727e8b'],
       WOOD = ['#a07c1a', '#7d6012', '#5a450d'], LIT = 'rgba(245,179,1,.85)', DIM = 'rgba(154,167,181,.16)';
   var g; // текущий родитель для рисования
+  var VB = [-360, -460, 2900, 1880]; // границы мира в пикселях холста
 
   // Изометрия: x уходит вправо-вниз, y влево-вниз, z вверх
   function P(x, y, z) { return [(x - y) * C * U, (x + y) * S * U - (z || 0) * U]; }
@@ -170,6 +171,11 @@
     var svg = view.appendChild(document.createElementNS(NS, 'svg'));
     svg.setAttribute('aria-hidden', 'true');
     svg.setAttribute('focusable', 'false');
+    // Холст размером со весь мир рисуется один раз, а камера — это CSS-трансформация
+    // всего холста: её считает видеокарта, без перерисовки сцены на каждый кадр скролла.
+    svg.setAttribute('viewBox', VB.join(' '));
+    svg.setAttribute('width', VB[2]);
+    svg.setAttribute('height', VB[3]);
     var world = svg.appendChild(document.createElementNS(NS, 'g')), car = build(world);
     return function (p) {
       var W = view.clientWidth, H = view.clientHeight, wide = W >= 900;
@@ -181,14 +187,14 @@
                             : { x: 58, y: -5, z: 0, k: Math.max(W / 3000, 0.17), cx: wide ? 0.56 : 0.5, cy: wide ? 0.6 : 0.17, car: -8 };
         return {
           x: o.c, y: -6, z: o.h / 2, car: o.c + 6,
-          k: mini ? Math.min(W / 680, H / (o.h * U + 250), 1) : Math.max(0.5, Math.min(W / 1150, H / 780, 1.1)),
+          k: mini ? Math.min(W / 680, H / (o.h * U + 250), 1) : Math.max(0.5, Math.min(W / 1150, H / 780, 1)),
           cx: mini || !wide ? 0.5 : 0.68, cy: mini ? 0.56 : wide ? 0.56 : 0.34
         };
       }
       var n = Math.min(Math.floor(p), 4), f = ease((p - n - 0.2) / 0.6), a = cam(n), b = cam(n + 1);
       function L(m) { return a[m] + (b[m] - a[m]) * f; }
       var k = a.k * Math.pow(b.k / a.k, f), s = P(L('x'), L('y'), L('z')), cp = P(L('car'), 1.1);
-      world.setAttribute('transform', 'translate(' + (W * L('cx') - k * s[0]).toFixed(1) + ' ' + (H * L('cy') - k * s[1]).toFixed(1) + ') scale(' + k.toFixed(4) + ')');
+      svg.style.transform = 'translate3d(' + (W * L('cx') - k * (s[0] - VB[0])).toFixed(1) + 'px,' + (H * L('cy') - k * (s[1] - VB[1])).toFixed(1) + 'px,0) scale(' + k.toFixed(4) + ')';
       car.setAttribute('transform', 'translate(' + cp[0].toFixed(1) + ' ' + cp[1].toFixed(1) + ')');
     };
   }
@@ -233,7 +239,16 @@
     }
   }
   var busy = false;
-  function tick() { if (busy) return; busy = true; requestAnimationFrame(function () { busy = false; frame(); }); }
+  var stage = sec.querySelector('.sh-view'), idle;
+  function tick() {
+    // пока страница едет, мелкие анимации сцены стоят: иначе браузер перерисовывает холст на каждом кадре
+    stage.classList.add('sh-moving');
+    clearTimeout(idle);
+    idle = setTimeout(function () { stage.classList.remove('sh-moving'); }, 160);
+    if (busy) return;
+    busy = true;
+    requestAnimationFrame(function () { busy = false; frame(); });
+  }
   addEventListener('scroll', tick, { passive: true });
   addEventListener('resize', tick);
   function go(n) { scrollTo({ top: sec.getBoundingClientRect().top + scrollY + span() * n / 5, behavior: 'smooth' }); }
