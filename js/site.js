@@ -18,6 +18,13 @@
     if (trigger && modal) {
       var busy = false;
 
+      // текущая страница — подсветкой, телефон — кнопкой под списком
+      modal.querySelectorAll('.cd-bouncy-nav a').forEach(function (a) {
+        if (a.pathname.replace(/index\.html$/, '') === location.pathname.replace(/index\.html$/, '')) a.setAttribute('aria-current', 'page');
+      });
+      var phone = document.querySelector('.site-header .header-phone');
+      if (phone) modal.querySelector('nav').appendChild(phone.cloneNode(true));
+
       var toggle = function (open) {
         if (busy) return;
         busy = true;
