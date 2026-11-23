@@ -1,0 +1,6 @@
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+# внутренние заметки по SEO и замеры — репозиторий публичный
+/docs/
+__pycache__/
